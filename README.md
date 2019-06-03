@@ -1,7 +1,7 @@
-# Proposal
-# Programmeerproject
-## By Levy van der Linde
-## Minor Programmeren
+## Proposal
+## Programmeerproject
+### By Levy van der Linde
+### Minor Programmeren
 
 ## -	Probleem
 
