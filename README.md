@@ -1,9 +1,7 @@
-## Proposal
+## Proposal (03-06-19)
 ## Programmeerproject
 ### By Levy van der Linde
 ### Minor Programmeren
-
-## Proposal 03-06-19
 
 What’s in your fridge?
 
