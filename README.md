@@ -44,9 +44,7 @@ There are other apps that make it possible to find recipes on a searchterm. That
 
 <img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58804371-00a72c80-8612-11e9-90f4-497a090e5bd0.png">
 
-<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58804394-1157a280-8612-11e9-9191-8a4a75284303.png">
-
-<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58804426-22a0af00-8612-11e9-89ae-c2ecbcef167e.png">
+<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58807471-6d252a00-8618-11e9-902d-41bda743d74f.png">
 
 <img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58804458-351ae880-8612-11e9-86d8-17979c7244a0.png">
 
