@@ -3,19 +3,19 @@
 ### By Levy van der Linde
 ### Minor Programmeren
 
-What’s in your fridge?
+*What’s in your fridge?*
 
 By Levy van der Linde
 Minor Programmeren
 
 
-- Problem
+## Problem
 
 No inspiration on what to cook?
 This app recommends several recipes built on what’s in your fridge!
 
 
-- Solution
+## Solution
 
 The only thing you have to do is search for recipes by the things that you can find in your fridge. 
 
@@ -23,15 +23,20 @@ Next to this, if you’ve found a nice recipe, it’s possible to make a grocery
 
 The main idea is to make it possible to search for recipes based on the users searchterm.
 Some possible additional ideas:
--	Create a crocerylist of the ingredients
--	Add your own recipe
--	Share your ideas via social media
 
-- Prerequisites
+-Create a crocerylist of the ingredients
+
+-Add your own recipe
+
+-Share your ideas via social media
+
+## Prerequisites
 
 I am going to use an API with recipes. Here are some links to what I’ve found so far:
 https://www.food2fork.com/about/api
+
 https://developer.edamam.com/edamam-recipe-api
+
 http://api2.bigoven.com/web/documentation/recipes
 
 Review on similar apps:
