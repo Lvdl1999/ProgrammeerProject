@@ -39,8 +39,7 @@ http://api2.bigoven.com/web/documentation/recipes
 Review on similar apps:
 There are other apps that make it possible to find recipes on a searchterm. That’s why I’ve thought of some additions to make my app more extensive.
 
-
-<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58804333-e9683f00-8611-11e9-9a0f-2a9550dec4ec.png">
+<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58807660-c9884980-8618-11e9-8293-6c6ccceaeed3.png">
 
 <img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/58804371-00a72c80-8612-11e9-90f4-497a090e5bd0.png">
 
