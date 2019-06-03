@@ -16,12 +16,18 @@ vervolgens te bestellen.
 Schermen:
 
 -Welkom scherm: keuze uit taarten of gebak
+
 -Overzicht aanbod standaard taarten/gebak
+
 -Filteren kan op smaak/vorm/thema
+
 -Taart samenstellen, keuze uit toppings, formaat 
+
 -Personalize! De gebruiker kan zelf een tekstje of plaatje toevoegen. 
 De app zou eventueel ook bepaalde versieringen kunnen aanbieden waarmee de gebruiker kan personaliseren.
+
 -Als gebruiker het af heeft het eindresultaat laten zien.
+
 -Boodschappenlijst voor als iemand een grote bestelling heeft en meerdere dingen bijvoorbeeld wilt samenstellen 
 kan het hier opgeslagen worden en later bestellen.
 
