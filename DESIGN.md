@@ -7,9 +7,10 @@
 
 
 ### Advanced sketches of the UI
-
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58881905-74613c00-86db-11e9-92a5-46a8d58b2f1f.png">
 
 ### A diagram of utility modes, classes and functions
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58881979-95299180-86db-11e9-8871-c412d88298fd.png">
 
 
 
