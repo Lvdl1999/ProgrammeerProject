@@ -24,7 +24,6 @@ For the Search Query the user should separate their ingredients by commas. After
 
 #### Recipe details parameters:
 The recipes will be returned with an unique ID which will be used to get desired recipe.
-
 Any request returns 30 results max.
 
 ## Users recipes
