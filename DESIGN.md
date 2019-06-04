@@ -6,11 +6,10 @@
 *What’s in your fridge?*
 
 -Advanced sketches of the UI
-
-
+...
 
 -A diagram of utility modes, classes and functions
-
+...
 
 
 
@@ -34,6 +33,8 @@ Next to using recipes from this API the users can also add their own recipes. Th
 
 -A list of database tables and fields (and their types) if you will use a database
 Waaruit bestaat de tabel als iemand een eigen recept submit?
+
+...
 
 Email address/name to sign up?
 Title of the recipe
