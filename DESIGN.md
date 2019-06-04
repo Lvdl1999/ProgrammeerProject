@@ -8,7 +8,7 @@ ________________________________________________________________________________
 <img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882609-ebe39b00-86dc-11e9-8840-8b7773950920.png">
 
 ### A diagram of utility modes, classes and functions:
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882662-0ae22d00-86dd-11e9-902c-33762db11071.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882948-c6a35c80-86dd-11e9-9e57-fd541880c386.png">
 
 ## Food2fork recipes
 I’m going to use an API from ‘food2fork.com’. They offer an API which exposes recipe discovery functions. 
