@@ -1,15 +1,17 @@
-## Design document (04-06-19)
+## Design document (04-06-19) *What’s in your fridge?*
 ## Programmeerproject
 #### By Levy van der Linde
 #### Minor Programmeren
 
-*What’s in your fridge?*
 
--Advanced sketches of the UI
-...
 
--A diagram of utility modes, classes and functions
-...
+
+### Advanced sketches of the UI
+
+
+### A diagram of utility modes, classes and functions
+
+
 
 
 
@@ -29,20 +31,25 @@ Any request returns 30 results max.
 Next to using recipes from this API the users can also add their own recipes. This will be handled through a rester service. A user can submit their email-address and add a recipe. The recipes will be stored online on a separate database. 
 
 
+### Database tables and fields 
+-Email address/name to sign up
+
+-Title of the recipe
+
+-Name of the publisher
+
+-Image url (possibly no url because user will want add their own image?)
+
+-Ingredients of this recipe
 
 
--A list of database tables and fields (and their types) if you will use a database
-Waaruit bestaat de tabel als iemand een eigen recept submit?
+### Discussion points:
+-Searching option seperated for API & DB search? Or user can search in both at the same time
 
-...
+-Using SQlite on phone for user recipes?
 
-Email address/name to sign up?
-Title of the recipe
-Name of the publisher
-Image url (possibly no url because user will want add their own image?)
-Ingredients of this recipe
+-Same Recipe Class voor API & DB?
 
-
-
+-Put recipes in listviews? (Adapter)
 
 
