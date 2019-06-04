@@ -1,7 +1,7 @@
 ## Design document (04-06-19)
 ## Programmeerproject
-### By Levy van der Linde
-### Minor Programmeren
+#### By Levy van der Linde
+#### Minor Programmeren
 
 *What’s in your fridge?*
 
