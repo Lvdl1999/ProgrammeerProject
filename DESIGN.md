@@ -1,20 +1,14 @@
-## Design document (04-06-19) *What’s in your fridge?*
-## Programmeerproject
+### Design document (04-06-19) *What’s in your fridge?*
+### Programmeerproject
 #### By Levy van der Linde
 #### Minor Programmeren
+_____________________________________________________________________________________________________________
 
+### Advanced sketches of the UI:
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882609-ebe39b00-86dc-11e9-8840-8b7773950920.png">
 
-
-
-### Advanced sketches of the UI
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58881905-74613c00-86db-11e9-92a5-46a8d58b2f1f.png">
-
-### A diagram of utility modes, classes and functions
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58881979-95299180-86db-11e9-8871-c412d88298fd.png">
-
-
-
-
+### A diagram of utility modes, classes and functions:
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882662-0ae22d00-86dd-11e9-902c-33762db11071.png">
 
 ## Food2fork recipes
 I’m going to use an API from ‘food2fork.com’. They offer an API which exposes recipe discovery functions. 
@@ -31,7 +25,7 @@ Any request returns 30 results max.
 Next to using recipes from this API the users can also add their own recipes. This will be handled through a rester service. A user can submit their email-address and add a recipe. The recipes will be stored online on a separate database. 
 
 
-### Database tables and fields 
+## Database tables and fields 
 -Email address/name to sign up
 
 -Title of the recipe
