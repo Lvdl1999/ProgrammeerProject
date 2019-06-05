@@ -5,10 +5,10 @@
 _____________________________________________________________________________________________________________
 
 ### Advanced sketches of the UI:
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882609-ebe39b00-86dc-11e9-8840-8b7773950920.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58961176-e6ec1d80-87a8-11e9-98d4-9d9346b8b8a4.png">
 
 ### A diagram of utility modes, classes and functions:
-<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58882948-c6a35c80-86dd-11e9-9e57-fd541880c386.png">
+<img width="700" alt="image" src="https://user-images.githubusercontent.com/47352487/58961240-0be09080-87a9-11e9-8597-9746ee90d8c5.png">
 
 ## Food2fork recipes
 I’m going to use an API from ‘food2fork.com’. They offer an API which exposes recipe discovery functions. 
