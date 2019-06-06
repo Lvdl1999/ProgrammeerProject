@@ -18,4 +18,20 @@ This was my advanced sketch at day 2:
 
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/47352487/58959822-2e24df00-87a6-11e9-8f9d-98d69b17155f.png">
 
+### Day 3
+Thinking about the app being user friendly, I made some changes. 
+
+First of all I decided to try and create one SearchActivity which handles the API search as well as the DB search. 
+This way the user doesn't need to search twice but get's both results at once. 
+
+Next to this, I made some name changes in the activities. 
+Also there was the GroceryActivity which shows a GroceryList. I thought of creating a function where the user can add a found recipe to their favorites. 
+At the first screen it'll be possible to see your favorites so you can remember them locally on your phone to look up in te future.
+
+The app sketch changed to this:
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/47352487/58960665-eacb7000-87a7-11e9-9723-5efe525bedaa.png">
+
+After changing the technical aspects I started programming this set up in Android Studio. 
+
 
