@@ -34,4 +34,5 @@ The app sketch changed to this:
 
 After changing the technical aspects I started programming this set up in Android Studio. 
 
-
+### Day 4
+Still working on connecting all the screens and creating buttons etc. Also making sure the Food2Fork API works. 
