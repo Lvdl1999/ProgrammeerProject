@@ -18,6 +18,9 @@ public class SearchActivity extends AppCompatActivity implements APIRecipesReque
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        APIRecipesRequest RecipeRequest = new APIRecipesRequest(this);
+        RecipeRequest.getAPIRecipes(this);
+
     }
 
     // Navigating from SearchActivity to MainActivity
@@ -35,6 +38,19 @@ public class SearchActivity extends AppCompatActivity implements APIRecipesReque
 
     }
 
+    // GotRecipe so name, id and image are printed from the recipe
+    @Override
+    public void gotRecipe(ArrayList<SearchRecipe> recipe) {
 
+//        print de gerechten hun naam,, id en hun imge
+    }
+
+
+    // Returning a toast message if request went wrong
+    @Override
+    public void gotRecipeError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
 
 }
+
