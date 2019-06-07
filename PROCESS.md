@@ -38,4 +38,4 @@ After changing the technical aspects I started programming this set up in Androi
 Still working on connecting all the screens and creating buttons etc. Also making sure the Food2Fork API works. 
 
 ### Day 5
-The API works! The search requestdata is printed containing the name, id and image urls. The next step is to use this for a recipe request. Because then the complete recipes will be requested so the ingredients etc too. This is the data that will be shown in the ResultsActivity.
+The API works! The APISearchRequest data is printed containing the name, id and image urls. The next step is to use this for a APIRecipeRequest. Because then the complete recipes will be requested so the ingredients etc too. This is the data that will be shown in the ResultsActivity.
