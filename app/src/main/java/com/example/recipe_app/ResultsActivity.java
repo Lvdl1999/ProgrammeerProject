@@ -24,6 +24,7 @@ public class ResultsActivity extends AppCompatActivity {
 
 //    When a user clicks on this button, the next 30 results will show.
 //    The API searchmethod only returns max 30 results at a time.
+//    To get the next 30 results, the same request can be used but use page 2 instead of 1
 
     }
 }

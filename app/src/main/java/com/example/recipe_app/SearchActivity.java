@@ -42,15 +42,23 @@ public class SearchActivity extends AppCompatActivity implements APIRecipesReque
     @Override
     public void gotRecipe(ArrayList<SearchRecipe> recipe) {
 
-//        print de gerechten hun naam,, id en hun imge
-    }
+        System.out.println("got recept");
+        this.recipe = recipe;
 
+        for(int i = 0; i < recipe.size(); i ++) {
+
+            SearchRecipe recipe_info = (SearchRecipe) this.recipe.get(i);
+
+            System.out.println(recipe_info.getName() + "\n" + recipe_info.getId() + "\n"+
+                    recipe_info.getImage() + "\n");
+        }
+
+    }
 
     // Returning a toast message if request went wrong
     @Override
     public void gotRecipeError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
 }
 

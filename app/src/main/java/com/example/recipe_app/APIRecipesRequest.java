@@ -23,9 +23,7 @@ public class APIRecipesRequest implements Response.Listener<JSONObject>, Respons
 
         void gotRecipe(ArrayList<SearchRecipe> recipe);
         void gotRecipeError (String message);
-
     }
-
 
     // Constructor
     APIRecipesRequest(Context context){
@@ -47,8 +45,6 @@ public class APIRecipesRequest implements Response.Listener<JSONObject>, Respons
     public void onErrorResponse(VolleyError error) {
         callback.gotRecipeError(error.getMessage());
     }
-
-
 
     // Everything went well, JSON object was returned
     @Override

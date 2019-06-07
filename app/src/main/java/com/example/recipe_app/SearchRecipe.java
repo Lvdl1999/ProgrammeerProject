@@ -25,7 +25,4 @@ public class SearchRecipe implements Serializable {
         return image;
     }
 
-
-
-
 }
