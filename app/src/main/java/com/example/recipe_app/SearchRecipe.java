@@ -9,8 +9,9 @@ public class SearchRecipe implements Serializable {
         this.name = name;
         this.id = id;
         this.image = image;
-
     }
+
+
 
     // Getters
     public String getName(){
