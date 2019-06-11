@@ -4,13 +4,30 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class ResultsActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class ResultsActivity extends AppCompatActivity implements APISearchRequest.Callback  {
+    private ArrayList recipe;
+    private String search_word;
+    private int page = 0;
+    private GridView recipe_GridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+
+        Intent intent = getIntent();
+        search_word = (String) intent.getStringExtra("search_word");
+
+        APISearchRequest RecipeRequest = new APISearchRequest(this);
+        RecipeRequest.getAPIRecipes(this, search_word, page);
+
+        recipe_GridView = (GridView) findViewById(R.id.recipeGridView);
     }
 
     // Navigating from ResultsActivity to SearchActivity
@@ -26,5 +43,30 @@ public class ResultsActivity extends AppCompatActivity {
 //    The API searchmethod only returns max 30 results at a time.
 //    To get the next 30 results, the same request can be used but use page 2 instead of 1
 
+    }
+
+    // GotRecipe so name, id and image are printed from the recipe
+    @Override
+    public void gotRecipe(ArrayList<SearchRecipe> recipe) {
+
+        System.out.println("got recept");
+        this.recipe = recipe;
+
+//        for(int i = 0; i < recipe.size(); i ++) {
+//
+//            SearchRecipe recipe_info = (SearchRecipe) this.recipe.get(i);
+//
+//            System.out.println(recipe_info.getName() + "\n" + recipe_info.getId() + "\n"+
+//                    recipe_info.getImage() + "\n");
+//        }
+        ResultsAdapter resultsAdapter = new ResultsAdapter(this, R.id.recipe_layout, recipe);
+        recipe_GridView.setAdapter(resultsAdapter);
+
+    }
+
+    // Returning a toast message if request went wrong
+    @Override
+    public void gotRecipeError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 }

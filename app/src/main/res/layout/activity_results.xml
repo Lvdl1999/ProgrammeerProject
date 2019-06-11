@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ResultsActivity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="324dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="44dp"
-        android:text="Have a look at our recipes:"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
@@ -38,4 +27,20 @@
         android:onClick="next_clicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="419dp"
+        android:layout_height="488dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <GridView
+            android:id="@+id/recipeGridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

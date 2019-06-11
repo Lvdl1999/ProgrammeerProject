@@ -13,7 +13,7 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
 
-public class APIRecipesRequest implements Response.Listener<JSONObject>, Response.ErrorListener{
+public class APISearchRequest implements Response.Listener<JSONObject>, Response.ErrorListener{
 
     private Callback callback;
     private Context context;
@@ -26,14 +26,13 @@ public class APIRecipesRequest implements Response.Listener<JSONObject>, Respons
     }
 
     // Constructor
-    APIRecipesRequest(Context context){
+    APISearchRequest(Context context){
         this.context = context;
     }
 
-    public void getAPIRecipes(Callback callback){
-        String url = "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3";
+    public void getAPIRecipes(Callback callback, String key, int page){
+        String url =  "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3&q="+key+"&page="+page;
         this.callback = callback;
-
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
         requestRecipe.add(jsonObjectRequest);

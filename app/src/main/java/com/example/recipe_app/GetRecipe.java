@@ -1,16 +1,17 @@
 package com.example.recipe_app;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-public class SearchRecipe implements Serializable {
+public class GetRecipe implements Serializable{
+
     private String name, id, image;
+    private ArrayList ingredients;
 
-    SearchRecipe(String name, String id, String image){
+    GetRecipe(String name, String id, String image, ArrayList ingredients){
         this.name = name;
         this.id = id;
         this.image = image;
-
-
     }
 
 
