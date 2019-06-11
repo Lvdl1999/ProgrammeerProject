@@ -43,3 +43,5 @@ The API works! The APISearchRequest data is printed containing the name, id and 
 ### Day 6
 Improving the app by it's ResultsActivity. The names of the recipes already show but the images won't. Working on it.
 It turned out the urls for the images were 'http' instead of 'https'. To solve it I splitted the image_url and added a 's' inbetween the 'p' and ':'. Might report it on Food2Forks Github page ;)
+
+Also I decided to do a GridView in the UI from ResultsActivity instead of a Listview.
