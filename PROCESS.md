@@ -43,3 +43,6 @@ Improving the app by it's ResultsActivity. The names of the recipes already show
 It turned out the urls for the images were 'http' instead of 'https'. To solve it I splitted the image_url and added a 's' inbetween the 'p' and ':'. Might report it on Food2Forks Github page ;)
 
 Also I decided to do a GridView in the UI from ResultsActivity instead of a Listview.
+
+### Day 7
+Working on completen the recipe requests for the alpha version this week. 
