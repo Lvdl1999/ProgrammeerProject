@@ -45,4 +45,5 @@ It turned out the urls for the images were 'http' instead of 'https'. To solve i
 Also I decided to do a GridView in the UI from ResultsActivity instead of a Listview.
 
 ### Day 7
-Working on completen the recipe requests for the alpha version this week. 
+Working on completing the recipe requests for the alpha version this week. 
+The GetRequest works too. The data only had to be put in textviews etc to show details of the recipe in the RecipeActivity. After this i'll start working on using a DB to add users recipes. 
