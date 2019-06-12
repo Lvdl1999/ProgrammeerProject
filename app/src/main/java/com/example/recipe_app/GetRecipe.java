@@ -1,6 +1,7 @@
 package com.example.recipe_app;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GetRecipe implements Serializable{
@@ -15,7 +16,6 @@ public class GetRecipe implements Serializable{
     }
 
 
-
     // Getters
     public String getName(){
         return name;
@@ -27,6 +27,10 @@ public class GetRecipe implements Serializable{
 
     public String getImage() {
         return image;
+    }
+
+    public ArrayList getIngredients(){
+        return ingredients;
     }
 
 }

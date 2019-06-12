@@ -11,6 +11,10 @@ public class RecipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+
+        Intent intent = getIntent();
+        GetRecipe getRecipe = (GetRecipe) intent.getSerializableExtra("clicked_recipe");
+
     }
 
     // Navigating from RecipeActivity to MainActivity

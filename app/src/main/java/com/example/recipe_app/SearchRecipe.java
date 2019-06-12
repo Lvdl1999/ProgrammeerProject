@@ -13,8 +13,6 @@ public class SearchRecipe implements Serializable {
 
     }
 
-
-
     // Getters
     public String getName(){
         return name;

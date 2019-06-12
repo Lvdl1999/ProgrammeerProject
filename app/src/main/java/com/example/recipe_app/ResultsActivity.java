@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -69,4 +70,19 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     public void gotRecipeError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+
+    private class GridItemClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            GetRecipe clickedRecipe = (GetRecipe) parent.getItemAtPosition(position);
+//
+            Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
+            intent.putExtra("clicked_recipe", clickedRecipe);
+            startActivity(intent);
+
+            System.out.println(clickedRecipe);
+        }
+    }
+
+
 }
