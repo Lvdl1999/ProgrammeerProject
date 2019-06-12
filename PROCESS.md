@@ -5,8 +5,6 @@
 
 *What’s in your fridge?*
 
-### Processbook
-
 #### Day 1
 Made a proposal for my app idea. At first I had this idea with personalizing cakes but couldn't find a fitting API for cake recipes. 
 After that I started brainstorming and came up with the idea about 'what's in your fridge?'.
