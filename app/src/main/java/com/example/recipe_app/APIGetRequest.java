@@ -35,9 +35,9 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
         this.callback = callback;
         String url = "https://www.food2fork.com/api/get?key=8413a4deaec24af1f8da381c9f6719a3&rId="+id;
 
-//        RequestQueue requestRecipe = Volley.newRequestQueue(context);
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
-//        requestRecipe.add(jsonObjectRequest);
+        RequestQueue requestRecipe = Volley.newRequestQueue(context);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
+        requestRecipe.add(jsonObjectRequest);
     }
 
 
@@ -51,7 +51,9 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     // Everything went well, JSON object was returned
     @Override
     public void onResponse(JSONObject response) {
-//
+
+        System.out.println("get request gelukt");
+
     }
 
 }

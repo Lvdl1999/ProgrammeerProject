@@ -46,7 +46,6 @@ public class ResultsAdapter extends ArrayAdapter {
         String currentString = recipe_image;
         String[] seperated = currentString.split(":");
         currentString = seperated[0] + "s:" + seperated[1];
-        System.out.println(currentString);
 
         Picasso.Builder builder = new Picasso.Builder(parent.getContext());
         builder.listener(new Picasso.Listener() {

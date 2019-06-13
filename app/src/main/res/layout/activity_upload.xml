@@ -9,10 +9,10 @@
     <TextView
         android:id="@+id/textView3"
         android:layout_width="215dp"
-        android:layout_height="108dp"
+        android:layout_height="52dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="92dp"
-        android:text="Upload your own!"
+        android:text=" Upload your own!"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,4 +38,44 @@
         android:onClick="uploadrecipe_clicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="76dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="248dp"
+        android:hint="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="56dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="204dp"
+        android:hint="Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="172dp"
+        android:layout_height="34dp"
+        android:hint="Title recipe"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="343dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="172dp"
+        android:layout_height="179dp"
+        android:ems="10"
+        android:hint="Ingredieë"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="394dp" />
+
 </android.support.constraint.ConstraintLayout>

@@ -4,8 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-public class RecipeActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class RecipeActivity extends AppCompatActivity implements APIGetRequest.Callback {
+
+    private String recipe_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,13 +18,16 @@ public class RecipeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe);
 
         Intent intent = getIntent();
-        GetRecipe getRecipe = (GetRecipe) intent.getSerializableExtra("clicked_recipe");
+        recipe_id = (String) intent.getSerializableExtra("recipe_id");
+
+        APIGetRequest GetRequest = new APIGetRequest(this);
+        GetRequest.getRecipes(this, recipe_id);
 
     }
 
     // Navigating from RecipeActivity to MainActivity
     public void buttonback_clicked(View view) {
-        Intent menu = new Intent(RecipeActivity.this, MainActivity.class);
+        Intent menu = new Intent(RecipeActivity.this, SearchActivity.class);
         startActivity(menu);
     }
 
@@ -32,5 +40,18 @@ public class RecipeActivity extends AppCompatActivity {
     public void showgrocery_clicked(View view) {
         Intent grocery = new Intent(RecipeActivity.this, GroceryActivity.class);
         startActivity(grocery);
+    }
+
+
+    @Override
+    public void gotRecipe(ArrayList<GetRecipe> recipe) {
+        System.out.println("got recept");
+    }
+
+    @Override
+    public void gotRecipeError(String message) {
+
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+
     }
 }

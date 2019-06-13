@@ -29,6 +29,26 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         RecipeRequest.getAPIRecipes(this, search_word, page);
 
         recipe_GridView = (GridView) findViewById(R.id.recipeGridView);
+
+        recipe_GridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the GridView selected/clicked item text
+
+                SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
+                 String recipeId = clickedrecipe.getId();
+                System.out.println("testttttttt voor id");
+                 System.out.println(recipeId);
+
+                 //GetRecipe clickedRecipe = (GetRecipe) parent.getItemAtPosition(position);
+                 //String recipe_id = clickedRecipe.getId();
+                // System.out.println(recipe_id);
+
+                 Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
+                 intent.putExtra("recipe_id", recipeId);
+                 startActivity(intent);
+            }
+        });
     }
 
     // Navigating from ResultsActivity to SearchActivity
@@ -50,7 +70,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     @Override
     public void gotRecipe(ArrayList<SearchRecipe> recipe) {
 
-        System.out.println("got recept");
         this.recipe = recipe;
 
 //        for(int i = 0; i < recipe.size(); i ++) {
@@ -69,19 +88,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     @Override
     public void gotRecipeError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    private class GridItemClickListener implements AdapterView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            GetRecipe clickedRecipe = (GetRecipe) parent.getItemAtPosition(position);
-//
-            Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
-            intent.putExtra("clicked_recipe", clickedRecipe);
-            startActivity(intent);
-
-            System.out.println(clickedRecipe);
-        }
     }
 
 
