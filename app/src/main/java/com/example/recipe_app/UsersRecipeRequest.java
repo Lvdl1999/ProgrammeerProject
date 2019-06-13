@@ -10,6 +10,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
     public void getUsersRecipe(Callback callback){
         this.callback = callback;
 //        String url.... van server
-        String url = "nog niks";
+        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/";
 
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
@@ -42,6 +43,22 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
 
     @Override
     public void onResponse(JSONArray response) {
+
+        ArrayList arrayList = new ArrayList();
+
+        try {
+            // The response is saved as an JSONARRAY
+            JSONArray usersrecipes_list = response;
+
+            // Looping over the usersrecipe list and adding the new recipe
+            for (int i = 0; i < usersrecipes_list.length(); i ++){
+                arrayList.add(usersrecipes_list.getString(i));
+            }
+            callback.gotUsersRecipe(arrayList);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 }
