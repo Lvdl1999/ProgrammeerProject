@@ -47,3 +47,6 @@ Also I decided to do a GridView in the UI from ResultsActivity instead of a List
 ### Day 7
 Working on completing the recipe requests for the alpha version this week. 
 The GetRequest works too. The data only had to be put in textviews etc to show details of the recipe in the RecipeActivity. After this i'll start working on using a DB to add users recipes. 
+
+### Day 8
+Both requests work now. Now updating RecipeActivity to show a recipe when clicked on it. Also creating the UsersRecipeRequest which makes is possible to request the usersrecipes from a local server. Decided to use rester as a local host because i've used it before and SQlite is local so the users wouldn't be able to search it theirselfs. 
