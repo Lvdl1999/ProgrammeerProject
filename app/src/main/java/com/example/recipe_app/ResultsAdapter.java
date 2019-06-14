@@ -33,20 +33,25 @@ public class ResultsAdapter extends ArrayAdapter {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.recipe_item, parent, false);
         }
 
+        // Saving textview and imageview that will show a recipe
         TextView title = convertView.findViewById(R.id.recipe_title);
         final ImageView image = convertView.findViewById(R.id.image_url);
 
+        // For every recipe it's name and image_url are saved
         SearchRecipe currentrecipe = recipeList.get(position);
-
         String recipe_name = currentrecipe.getName();
         String recipe_image = String.valueOf(currentrecipe.getImage());
 
+        // Set recipes name
         title.setText(recipe_name);
 
+
+        // Before the url can be set to the image, it is updated from a 'http' to 'https' link
         String currentString = recipe_image;
         String[] seperated = currentString.split(":");
         currentString = seperated[0] + "s:" + seperated[1];
 
+        // In case setting the image went wrong this will return an error
         Picasso.Builder builder = new Picasso.Builder(parent.getContext());
         builder.listener(new Picasso.Listener() {
 
@@ -56,12 +61,12 @@ public class ResultsAdapter extends ArrayAdapter {
 
             }
         });
+
+        // Set recipes image
         Picasso pic = builder.build();
         pic.load(currentString).into(image);
 
-
         return convertView;
-
     }
 
 

@@ -27,7 +27,7 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
 
     public void getUsersRecipe(Callback callback){
         this.callback = callback;
-//        String url.... van server
+        // String url.... van server
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/";
 
         RequestQueue queue = Volley.newRequestQueue(context);

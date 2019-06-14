@@ -13,6 +13,7 @@ public class UploadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_upload);
     }
 
+    // Navigating from UploadActivity back to MainActivity
     public void tomenu_clicked(View view) {
 
         Intent tomenu = new Intent(UploadActivity.this, MainActivity.class);
