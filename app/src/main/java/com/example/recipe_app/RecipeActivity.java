@@ -44,7 +44,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         startActivity(grocery);
     }
 
-
     @Override
     public void gotRecipe(ArrayList<GetRecipe> recipe) {
         System.out.println("got recipe");

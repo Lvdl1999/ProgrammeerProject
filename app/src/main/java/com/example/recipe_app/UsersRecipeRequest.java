@@ -24,7 +24,6 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
         void gotUsersRecipeError (String message);
     }
 
-
     public void getUsersRecipe(Callback callback){
         this.callback = callback;
         // String url.... van server
@@ -34,7 +33,6 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
         queue.add(jsonArrayRequest);
     }
-
 
     @Override
     public void onErrorResponse(VolleyError error) {
@@ -59,6 +57,5 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
         catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
 }
