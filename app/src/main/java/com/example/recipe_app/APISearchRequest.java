@@ -31,6 +31,8 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
     }
 
     public void getAPIRecipes(Callback callback, String key, int page){
+        // key is variable to the searchword of the user
+        // page is used as a variable to get the next or previous 30 results
         String url =  "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3&q="+key+"&page="+page;
         this.callback = callback;
         RequestQueue requestRecipe = Volley.newRequestQueue(context);

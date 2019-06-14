@@ -22,31 +22,31 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
+        // Receiving the search word of the user through the intent
         Intent intent = getIntent();
         search_word = (String) intent.getStringExtra("search_word");
 
+        // The search word is redirected to the APISearchRequest
         APISearchRequest RecipeRequest = new APISearchRequest(this);
         RecipeRequest.getAPIRecipes(this, search_word, page);
 
+        // Given the results, the user can click on a recipe to get more details
         recipe_GridView = (GridView) findViewById(R.id.recipeGridView);
-
         recipe_GridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Get the GridView selected/clicked item text
 
-                SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
-                 String recipeId = clickedrecipe.getId();
-                System.out.println("testttttttt voor id");
-                 System.out.println(recipeId);
+        // Get the GridView selected/clicked item text
+        SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
 
-                 //GetRecipe clickedRecipe = (GetRecipe) parent.getItemAtPosition(position);
-                 //String recipe_id = clickedRecipe.getId();
-                // System.out.println(recipe_id);
+        String recipeId = clickedrecipe.getId();
+        System.out.println("testttttttt voor id::::");
+        System.out.println(recipeId);
 
-                 Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
-                 intent.putExtra("recipe_id", recipeId);
-                 startActivity(intent);
+        Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
+        intent.putExtra("recipe_id", recipeId);
+        startActivity(intent);
+
             }
         });
     }

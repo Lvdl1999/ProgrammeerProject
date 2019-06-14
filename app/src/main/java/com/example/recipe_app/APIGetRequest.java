@@ -22,7 +22,6 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
 
         void gotRecipe(ArrayList<GetRecipe> recipe);
         void gotRecipeError(String message);
-
     }
 
     // Constructor
@@ -40,8 +39,6 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
         requestRecipe.add(jsonObjectRequest);
     }
 
-
-
     // Something went wrong --> Errormessage
     @Override
     public void onErrorResponse(VolleyError error) {
@@ -53,7 +50,5 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     public void onResponse(JSONObject response) {
 
         System.out.println("get request gelukt");
-
     }
-
 }

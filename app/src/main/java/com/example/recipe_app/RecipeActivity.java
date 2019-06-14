@@ -31,12 +31,14 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         startActivity(menu);
     }
 
+    // Adding current recipe to favorites
     public void addfavorites_clicked(View view) {
         // When the user looks at a recipe it's possible to add to favorites through this method.
         // The user has to click this button and the recipe will be added to their favorites list.
         // Which is also a listview in FavoritesActivity.
     }
 
+    // Navigating from RecipeActivity to GroceryActivity
     public void showgrocery_clicked(View view) {
         Intent grocery = new Intent(RecipeActivity.this, GroceryActivity.class);
         startActivity(grocery);
@@ -45,7 +47,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
     @Override
     public void gotRecipe(ArrayList<GetRecipe> recipe) {
-        System.out.println("got recept");
+        System.out.println("got recipe");
     }
 
     @Override
