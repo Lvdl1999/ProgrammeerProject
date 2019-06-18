@@ -21,9 +21,8 @@ public class ResultsAdapter extends ArrayAdapter {
 
     public ResultsAdapter(Context context, int layout, ArrayList<SearchRecipe> recipeList) {
         super(context, layout, recipeList);
-
-        this.context = context;
         this.recipeList = recipeList;
+
     }
 
     @Override

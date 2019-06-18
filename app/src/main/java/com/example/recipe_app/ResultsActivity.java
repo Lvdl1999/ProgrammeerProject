@@ -11,11 +11,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ResultsActivity extends AppCompatActivity implements APISearchRequest.Callback  {
+public class ResultsActivity extends AppCompatActivity implements APISearchRequest.Callback, UsersRecipeRequest.Callback  {
     private ArrayList recipe;
+    private ArrayList GetRecipe;
     private String search_word;
     private int page = 0;
     private GridView recipe_GridView;
+    private ArrayList arrayList = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +28,8 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Intent intent = getIntent();
         search_word = (String) intent.getStringExtra("search_word");
 
-        // The search word is redirected to the APISearchRequest
-        APISearchRequest RecipeRequest = new APISearchRequest(this);
-        RecipeRequest.getAPIRecipes(this, search_word, page);
+        UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
+        userRecipeRequest.getUsersRecipe(this);
 
         // Given the results, the user can click on a recipe to get more details
         recipe_GridView = (GridView) findViewById(R.id.recipeGridView);
@@ -53,7 +54,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
     // Navigating from ResultsActivity to SearchActivity
     public void back_clicked(View view) {
-
         Intent back = new Intent(ResultsActivity.this, SearchActivity.class);
         startActivity(back);
     }
@@ -70,16 +70,14 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     @Override
     public void gotRecipe(ArrayList<SearchRecipe> recipe) {
 
-        this.recipe = recipe;
-
-//        for(int i = 0; i < recipe.size(); i ++) {
-//
-//            SearchRecipe recipe_info = (SearchRecipe) this.recipe.get(i);
-//
-//            System.out.println(recipe_info.getName() + "\n" + recipe_info.getId() + "\n"+
-//                    recipe_info.getImage() + "\n");
-//        }
-        ResultsAdapter resultsAdapter = new ResultsAdapter(this, R.id.recipe_layout, recipe);
+        for (int i2 = 0; i2 < recipe.size(); i2++) {
+            SearchRecipe searchRecipe2 = (SearchRecipe) recipe.get(i2);
+            SearchRecipe recipe2 = new SearchRecipe(searchRecipe2.getName(), searchRecipe2.getId(),
+                    searchRecipe2.getImage());
+            arrayList.add(recipe2);
+        }
+        this.recipe = arrayList;
+        ResultsAdapter resultsAdapter = new ResultsAdapter(this, R.id.recipe_layout, this.recipe);
         recipe_GridView.setAdapter(resultsAdapter);
 
     }
@@ -90,5 +88,24 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void gotUsersRecipe (ArrayList<SearchRecipe> GetRecipe) {
+        this.GetRecipe = GetRecipe;
+
+        for (int i = 0; i < GetRecipe.size(); i++) {
+            SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
+            SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
+                    searchRecipe.getImage());
+            arrayList.add(recipe);
+        }
+        // The search word is redirected to the APISearchRequest
+        APISearchRequest RecipeRequest = new APISearchRequest(this);
+        RecipeRequest.getAPIRecipes(this, search_word, page);
+
+    }
+    @Override
+    public void gotUsersRecipeError (String message){
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
 
 }

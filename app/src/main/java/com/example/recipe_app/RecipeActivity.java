@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,6 +18,12 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+        // Saving textview and imageview that will show a recipe
+
+        ImageView recipe_image = findViewById(R.id.image_recipe);
+        TextView ingredients = findViewById(R.id.ingredients);
+        TextView title = findViewById(R.id.title);
+        TextView recipe = findViewById(R.id.recipe);
 
         Intent intent = getIntent();
         recipe_id = (String) intent.getSerializableExtra("recipe_id");
@@ -55,4 +63,5 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
     }
+
 }
