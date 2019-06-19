@@ -23,7 +23,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     // Describes what the callback should get back and it's methods will show how
     public interface Callback {
 
-        void gotRecipe(ArrayList<GetRecipe> recipe);
+        void gotRecipe(GetRecipe get_recipe);
         void gotRecipeError(String message);
     }
 
@@ -73,9 +73,9 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             }
 
             GetRecipe get_recipe = new GetRecipe(title, id, image, source, ingredients_list);
-            arrayList.add(get_recipe);
+//            arrayList.add(get_recipe);
 
-            callback.gotRecipe(arrayList);
+            callback.gotRecipe(get_recipe);
 
             System.out.println("get request info is binnen");
 
