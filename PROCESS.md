@@ -53,3 +53,11 @@ Both requests work now. Now updating RecipeActivity to show a recipe when clicke
 
 ### Day 9
 Today and tomorrow i'm gonna work on the users recipe's database. Looking at other apps and their user interface. It can give inspiration as well as looking for points of improvement that I can use in my app. 
+
+### Day 10
+At first I wanted to make two search options. One to search for users recipes and one for the online recipes (API). This wouldn't be a nice solution and certainly not very user friendly because it would require a user two search twice but seperately. So i worked on merging the results of the search in the API and database. 
+
+### Day 11
+It workes! At first I made it possible to add recipes to the database. After that I wanted the app to show both results at one search. The app shows results from the API as well as the database at once. Still need to implement the filter on the database search. 
+Unfortunateley it's not possible to let the user add their own image. That's why user recipes will show wit a standard picture so that they are also distinguish from the API recipes.
+
