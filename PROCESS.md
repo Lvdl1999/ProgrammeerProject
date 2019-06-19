@@ -59,5 +59,5 @@ At first I wanted to make two search options. One to search for users recipes an
 
 ### Day 11
 It workes! At first I made it possible to add recipes to the database. After that I wanted the app to show both results at one search. The app shows results from the API as well as the database at once. Still need to implement the filter on the database search. 
-Unfortunateley it's not possible to let the user add their own image. That's why user recipes will show wit a standard picture so that they are also distinguish from the API recipes.
+Unfortunateley it's not possible to let the user add their own image. That's why user recipes will show with a standard picture so that they are also distinguish from the API recipes.
 
