@@ -32,7 +32,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         APIGetRequest GetRequest = new APIGetRequest(this);
         GetRequest.getRecipes(this, recipe_id);
 
-
     }
 
     // Navigating from RecipeActivity to SearchActivity
@@ -47,7 +46,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         startActivity(menu);
     }
 
-    // Adding current recipe to favorites
+    // TODO Adding current recipe to favorites
     public void addfavorites_clicked(View view) {
         // When the user looks at a recipe it's possible to add to favorites through this method.
         // The user has to click this button and the recipe will be added to their favorites list.
@@ -60,61 +59,44 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         startActivity(grocery);
     }
 
+    // Clicking this button will redirect to the source url of the recipe
     public void browse_recipe(View view) {
-
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(this.source_url));
         startActivity(browserIntent);
-
     }
 
     @Override
     public void gotRecipe(GetRecipe getRecipe) {
 
-    // Saving textviews and imageview that will show a recipe
-    ImageView recipe_image = findViewById(R.id.image_recipe);
-    TextView ingredients = findViewById(R.id.ingredients);
-    TextView title = findViewById(R.id.title);
+        // Saving textviews and imageview that will show a recipe
+        ImageView recipe_image = findViewById(R.id.image_recipe);
+        TextView ingredients = findViewById(R.id.ingredients);
+        TextView title = findViewById(R.id.title);
 
-    // Get image_url, name, source_url and ingredients from the clicked recipe
-    String image_url = getRecipe.getImage();
-    String recipeName = getRecipe.getName();
-    this.source_url = getRecipe.getSource();
-    ArrayList ingredients_text = getRecipe.getIngredients();
+        // Get image_url, name, source_url and ingredients from the clicked recipe
+        String image_url = getRecipe.getImage();
+        String recipeName = getRecipe.getName();
+        this.source_url = getRecipe.getSource();
+        ArrayList ingredients_text = getRecipe.getIngredients();
 
-    title.setText(recipeName);
+        // Set title and ingredients to textviews in RecipeActivity
+        title.setText(recipeName);
 
-    // Before the url can be set to the image, it is updated from a 'http' to 'https' link
-    String currentString = image_url;
-    String[] seperated = currentString.split(":");
-    currentString = seperated[0] + "s:" + seperated[1];
+//        TODO ingredients uit lijst in textview
 
-    // Set url to image view
-    Picasso.with(this).load(currentString).into(recipe_image);
+        // Before the url can be set to the image, it is updated from a 'http' to 'https' link
+        String currentString = image_url;
+        String[] seperated = currentString.split(":");
+        currentString = seperated[0] + "s:" + seperated[1];
 
+        // Setting image_url to image view
+        Picasso.with(this).load(currentString).into(recipe_image);
     }
 
     @Override
     public void gotRecipeError(String message) {
-
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
-
-
-
-//    @Override
-//    public void gotRecipe(ArrayList<GetRecipe> GetRecipe) {
-//
-////        for (int i; i < 300; i++ ) {
-////            System.out.println("test" + arrayList[i]);
-////        }
-//
-//        GetRecipe getRecipe = new GetRecipe()
-//
-//    }
-//
-//    @Override
-//    public void gotRecipeError(String message) {
-//
-//        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-//    }
 }
+
+

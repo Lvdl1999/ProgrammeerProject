@@ -43,6 +43,8 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
         String recipeId = clickedrecipe.getId();
 
+//      TODO Als je user recipe bekijkt moet je niet naar Recipe activity want die heeft recipe er al bij getypt
+
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
         intent.putExtra("recipe_id", recipeId);
         startActivity(intent);
@@ -59,6 +61,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
     public void next_clicked(View view) {
 
+//    TODO next 30 results
 //    When a user clicks on this button, the next 30 results will show.
 //    The API searchmethod only returns max 30 results at a time.
 //    To get the next 30 results, the same request can be used but use page 2 instead of 1
@@ -78,7 +81,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         this.recipe = arrayList;
         ResultsAdapter resultsAdapter = new ResultsAdapter(this, R.id.recipe_layout, this.recipe);
         recipe_GridView.setAdapter(resultsAdapter);
-
     }
 
     // Returning a toast message if request went wrong

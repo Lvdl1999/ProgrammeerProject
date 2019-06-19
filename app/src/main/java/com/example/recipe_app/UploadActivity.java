@@ -39,6 +39,7 @@ public class UploadActivity extends AppCompatActivity {
 
     public void uploadrecipe_clicked(View view) {
 
+        // Saving all Edittexts and getting title, name, email, recipe and ingredients
         EditText title = findViewById(R.id.title);
         String user_title = title.getText().toString();
         EditText email = findViewById(R.id.email);
@@ -50,7 +51,7 @@ public class UploadActivity extends AppCompatActivity {
         EditText recipe = findViewById(R.id.recipe);
         String user_recipe = recipe.getText().toString();
 
-
+        // Making sure the user fills in all the Edit texts or the app shows a toast message
         if((user_title.equals("") || user_title == null)){
             Toast.makeText(this, "Fill in a Title", Toast.LENGTH_LONG).show();
         }
@@ -69,12 +70,12 @@ public class UploadActivity extends AppCompatActivity {
         else{
             uploadRecipe(user_title, user_email, user_name, user_recipe, user_ingredients);
         }
-
-
     }
 
     private void uploadRecipe(final String title, final String email, final String name,
                               final String recipe, final String ingredients){
+
+//         TODO Standaard plaatje voor users recipes
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
         new Response.Listener<String>() {
