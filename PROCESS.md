@@ -61,3 +61,6 @@ At first I wanted to make two search options. One to search for users recipes an
 It workes! At first I made it possible to add recipes to the database. After that I wanted the app to show both results at one search. The app shows results from the API as well as the database at once. Still need to implement the filter on the database search. 
 Unfortunateley it's not possible to let the user add their own image. That's why user recipes will show with a standard picture so that they are also distinguish from the API recipes.
 
+Lot's of improvement. RecipeActivity is almost done and shows the clicked recipe with it's details. It took some time because it was the first time I used data from a request but not using it in an Adapter. But it works! Also it's possible to click a button that redirects the user to the source_url with the complete recipe.
+Used the splitting method from http to https again because I haven't found another solution for it and the TA accepted it like this.
+
