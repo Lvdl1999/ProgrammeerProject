@@ -31,6 +31,8 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         APIGetRequest GetRequest = new APIGetRequest(this);
         GetRequest.getRecipes(this, recipe_id);
 
+
+
     }
 
     // Navigating from RecipeActivity to MainActivity
@@ -61,7 +63,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     public void gotRecipeError(String message) {
 
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-
     }
 
 }

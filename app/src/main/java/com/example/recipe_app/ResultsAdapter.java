@@ -22,7 +22,6 @@ public class ResultsAdapter extends ArrayAdapter {
     public ResultsAdapter(Context context, int layout, ArrayList<SearchRecipe> recipeList) {
         super(context, layout, recipeList);
         this.recipeList = recipeList;
-
     }
 
     @Override
@@ -43,7 +42,6 @@ public class ResultsAdapter extends ArrayAdapter {
 
         // Set recipes name
         title.setText(recipe_name);
-
 
         // Before the url can be set to the image, it is updated from a 'http' to 'https' link
         String currentString = recipe_image;
@@ -67,7 +65,4 @@ public class ResultsAdapter extends ArrayAdapter {
 
         return convertView;
     }
-
-
-
 }

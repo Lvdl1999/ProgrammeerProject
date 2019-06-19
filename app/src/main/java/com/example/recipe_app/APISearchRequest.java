@@ -65,7 +65,6 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
                 String image = jsonObject.getString("image_url");
                 SearchRecipe recipe = new SearchRecipe(title, id, image);
                 arrayList.add(recipe);
-
             }
 
             callback.gotRecipe(arrayList);

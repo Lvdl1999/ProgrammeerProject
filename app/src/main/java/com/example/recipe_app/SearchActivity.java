@@ -38,10 +38,5 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(results);
 
     }
-
-
-
-
-
 }
 

@@ -34,15 +34,14 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         // Given the results, the user can click on a recipe to get more details
         recipe_GridView = (GridView) findViewById(R.id.recipeGridView);
         recipe_GridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         // Get the GridView selected/clicked item text
         SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
 
         String recipeId = clickedrecipe.getId();
-        System.out.println("testttttttt voor id::::");
-        System.out.println(recipeId);
 
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
         intent.putExtra("recipe_id", recipeId);

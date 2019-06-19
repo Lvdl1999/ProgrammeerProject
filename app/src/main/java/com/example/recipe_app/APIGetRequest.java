@@ -8,7 +8,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.util.ArrayList;
 
@@ -50,5 +53,34 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     public void onResponse(JSONObject response) {
 
         System.out.println("get request gelukt");
+
+        ArrayList arrayList = new ArrayList();
+
+        try {
+            JSONObject jsonObject = response.getJSONObject("recipe");
+
+            String title = jsonObject.getString("title");
+            String id = jsonObject.getString("recipe_id");
+            String image = jsonObject.getString("image_url");
+            String source = jsonObject.getString("source_url");
+
+            ArrayList ingredients_list = new ArrayList();
+            JSONArray ingredients_json = jsonObject.getJSONArray("ingredients");
+
+            for (int j = 0; j < ingredients_json.length(); j++) {
+                ingredients_list.add(ingredients_json.getString(j));
+                System.out.println(j);
+            }
+
+            GetRecipe get_recipe = new GetRecipe(title, id, image, source, ingredients_list);
+            arrayList.add(get_recipe);
+
+            callback.gotRecipe(arrayList);
+
+            System.out.println("get request info is binnen");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
