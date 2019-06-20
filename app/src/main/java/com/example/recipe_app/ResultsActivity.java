@@ -85,7 +85,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         for (int i2 = 0; i2 < recipe.size(); i2++) {
             SearchRecipe searchRecipe2 = (SearchRecipe) recipe.get(i2);
             SearchRecipe recipe2 = new SearchRecipe(searchRecipe2.getName(), searchRecipe2.getId(),
-                    searchRecipe2.getImage(), searchRecipe2.getRecipetag());
+                    searchRecipe2.getImage());
             arrayList.add(recipe2);
         }
         this.recipe = arrayList;
@@ -106,7 +106,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         for (int i = 0; i < GetRecipe.size(); i++) {
             SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
             SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
-                    searchRecipe.getImage(), searchRecipe.getRecipetag());
+                    searchRecipe.getImage());
             arrayList.add(recipe);
         }
         // The search word is redirected to the APISearchRequest

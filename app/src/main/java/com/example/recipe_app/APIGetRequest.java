@@ -73,7 +73,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
                 System.out.println(j);
             }
 
-            GetRecipe get_recipe = new GetRecipe(title, id, image, source, recipe_tag, ingredients_list);
+            GetRecipe get_recipe = new GetRecipe(title, id, image, source, ingredients_list);
 
             callback.gotRecipe(get_recipe);
 
