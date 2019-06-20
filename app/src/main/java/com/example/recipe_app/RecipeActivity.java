@@ -79,6 +79,10 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         this.source_url = getRecipe.getSource();
         ArrayList ingredients_text = getRecipe.getIngredients();
 
+        String TAGGGG = getRecipe.getRecipetag();
+        System.out.println("RECIPE TAG TEST" + TAGGGG);
+
+
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);
 
