@@ -64,3 +64,8 @@ Unfortunateley it's not possible to let the user add their own image. That's why
 Lot's of improvement. RecipeActivity is almost done and shows the clicked recipe with it's details. It took some time because it was the first time I used data from a request but not using it in an Adapter. But it works! Also it's possible to click a button that redirects the user to the source_url with the complete recipe.
 Used the splitting method from http to https again because I haven't found another solution for it and the TA accepted it like this.
 
+### Day 12
+At first I had a really good start. Then I realized I had to make something to make sure the RecipeActivity could recognize whether the user clicked on an UserRecipe or API recipe. I started off quite enthousiasmic but then I messed up and didn't get it back as it was. So I had to go back to my last commit, which was were I left off yesterday. So I created a Recipe tag so it knows to do the right request. Also I created a GetRequest for the user recipes. This is not done yet. The tag does work for API recipes already.
+Also have worked on the next and previous button in the ResultsActivity but not done yet. 
+
+
