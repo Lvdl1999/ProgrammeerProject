@@ -63,7 +63,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             String id = jsonObject.getString("recipe_id");
             String image = jsonObject.getString("image_url");
             String source = jsonObject.getString("source_url");
-            String recipe_tag = "TAGGGG: database recipe";
+            String recipe_tag = "database recipe";
 
             ArrayList ingredients_list = new ArrayList();
             JSONArray ingredients_json = jsonObject.getJSONArray("ingredients");

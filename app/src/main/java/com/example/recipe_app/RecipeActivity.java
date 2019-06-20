@@ -14,10 +14,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class RecipeActivity extends AppCompatActivity implements APIGetRequest.Callback {
+public class RecipeActivity extends AppCompatActivity implements APIGetRequest.Callback, UserGetRequest.Callback {
 
     private String recipe_id;
     private String source_url;
+    private String tag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,20 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         Intent intent = getIntent();
         recipe_id = (String) intent.getSerializableExtra("recipe_id");
 
-        // APIGetRequest using the recipes id
-        APIGetRequest GetRequest = new APIGetRequest(this);
-        GetRequest.getRecipes(this, recipe_id);
+        System.out.println("WELKE DING GEDRUKT?:" + recipe_id);
+
+        if (this.tag == "database recipe"){
+            // APIGetRequest using the recipes id
+
+            System.out.println("kan zoeken met tag");
+            APIGetRequest GetRequest = new APIGetRequest(this);
+            GetRequest.getRecipes(this, recipe_id);
+        }
+        else {
+            UserGetRequest userGetRequest = new UserGetRequest(this);
+            userGetRequest.getUsersRecipe(this);
+        }
+
 
     }
 
@@ -79,9 +91,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         this.source_url = getRecipe.getSource();
         ArrayList ingredients_text = getRecipe.getIngredients();
 
-        String TAGGGG = getRecipe.getRecipetag();
-        System.out.println("RECIPE TAG TEST" + TAGGGG);
-
+        this.tag = getRecipe.getRecipetag();
 
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);
@@ -89,6 +99,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 //        TODO ingredients uit lijst in textview
 
         // Before the url can be set to the image, it is updated from a 'http' to 'https' link
+//        TODO functie maken die het seperate?? Nu doe ik hem telkens overnieuw maar eerste deel splitten is hetzelfde
         String currentString = image_url;
         String[] seperated = currentString.split(":");
         currentString = seperated[0] + "s:" + seperated[1];
@@ -101,6 +112,47 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     public void gotRecipeError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+
+    @Override
+    public void gotUsersRec(GetRecipe userRecipe) {
+
+
+        System.out.println("NOG EEN CCECKKK");
+
+        // Saving textviews and imageview that will show a recipe
+        ImageView image_recipe = findViewById(R.id.image_recipe);
+        TextView ingredients = findViewById(R.id.ingredients);
+        TextView title = findViewById(R.id.title);
+        TextView recipe = findViewById(R.id.recipe_text);
+
+        // Get image_url, name, recipe and ingredients from the clicked recipe
+        String users_title = userRecipe.getName();
+        String recipe_text = userRecipe.getSource();
+        String image_url = userRecipe.getImage();
+//        TODO ingredienten opvragen en vullen.
+
+        System.out.println("receptje:" + recipe_text);
+
+        title.setText(users_title);
+        recipe.setText(recipe_text);
+
+        // Before the url can be set to the image, it is updated from a 'http' to 'https' link
+        String currentString = image_url;
+        String[] seperated = currentString.split(":");
+        currentString = seperated[0] + "s:" + seperated[1];
+
+        // Setting image_url to image view
+        Picasso.with(this).load(currentString).into(image_recipe);
+
+
+    }
+
+    @Override
+    public void gotUsersRecError(String message) {
+
+    }
+
+
 }
 
 

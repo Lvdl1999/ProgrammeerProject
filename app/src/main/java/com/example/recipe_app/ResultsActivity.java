@@ -69,12 +69,11 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
 //        page meegeven aan intent want nu begint ie altijd weer op 0 omdat ie zo is geinitialiseerd.
         page ++;
-        System.out.println("testttttttje voor page" + page);
+        System.out.println("testje voor page" + page);
 
         // The search word is redirected to the APISearchRequest
         APISearchRequest RecipeRequest = new APISearchRequest(this);
         RecipeRequest.getAPIRecipes(this, search_word, page);
-
 
     }
 
