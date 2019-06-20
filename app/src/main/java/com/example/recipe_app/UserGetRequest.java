@@ -30,7 +30,6 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
     }
 
 
-
     UserGetRequest(Context context){
         this.context = context;
     }
@@ -38,15 +37,11 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
         this.callback = callback;
 
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
-
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
         queue.add(jsonArrayRequest);
 
     }
-
-
-
 
 
     @Override
@@ -71,6 +66,10 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
                 String recipe = jsonObject.getString("recipe");
 //                TODO ingredients krijg je in string maar moet als lijst door worden gegeven.
                 ArrayList ingredients = null;
+
+//              Arraylist op [0] is het recept ? Of niet, anders is dat je string
+
+
                 String recipetag = "users recipe";
                 //String image = jsonObject.getString("image_url");
 

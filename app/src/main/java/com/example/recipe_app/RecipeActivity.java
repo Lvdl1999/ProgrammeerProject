@@ -31,7 +31,9 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         System.out.println("WELKE DING GEDRUKT?:" + recipe_id);
 
-        if (this.tag == "database recipe"){
+        // Depending on the kind of recipe the user clicked, there will be a different request
+        // API recipes get the tag "API recipe" and user recipes "user recipe"
+        if (this.tag == "API recipe"){
             // APIGetRequest using the recipes id
 
             System.out.println("kan zoeken met tag");
@@ -41,8 +43,11 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         else {
             UserGetRequest userGetRequest = new UserGetRequest(this);
             userGetRequest.getUsersRecipe(this);
-        }
 
+        // In case it's an user recipe there is no browse button needed to redirect to online recipe
+//            TODO ff checken of dit knopje onzichtbaar is
+            findViewById(R.id.browse_button).setVisibility(View.INVISIBLE);
+        }
 
     }
 
@@ -99,7 +104,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 //        TODO ingredients uit lijst in textview
 
         // Before the url can be set to the image, it is updated from a 'http' to 'https' link
-//        TODO functie maken die het seperate?? Nu doe ik hem telkens overnieuw maar eerste deel splitten is hetzelfde
         String currentString = image_url;
         String[] seperated = currentString.split(":");
         currentString = seperated[0] + "s:" + seperated[1];
@@ -116,7 +120,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     @Override
     public void gotUsersRec(GetRecipe userRecipe) {
 
-
         System.out.println("NOG EEN CCECKKK");
 
         // Saving textviews and imageview that will show a recipe
@@ -125,7 +128,8 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         TextView title = findViewById(R.id.title);
         TextView recipe = findViewById(R.id.recipe_text);
 
-        // Get image_url, name, recipe and ingredients from the clicked recipe
+        // Get image_url, name, recipe and ingredients from the clicked userrecipe
+        // TODO toelichten van gebruik getSource voor recipe?
         String users_title = userRecipe.getName();
         String recipe_text = userRecipe.getSource();
         String image_url = userRecipe.getImage();
@@ -133,6 +137,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         System.out.println("receptje:" + recipe_text);
 
+        // Set title, ingredients and recipe to textviews in RecipeActivity
         title.setText(users_title);
         recipe.setText(recipe_text);
 
@@ -143,16 +148,12 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         // Setting image_url to image view
         Picasso.with(this).load(currentString).into(image_recipe);
-
-
     }
 
     @Override
     public void gotUsersRecError(String message) {
-
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
-
 }
 
 

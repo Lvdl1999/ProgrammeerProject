@@ -40,11 +40,9 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
         // Get the GridView selected/clicked item text
         SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
-
         String recipeId = clickedrecipe.getId();
 
-//  TODO Als je user recipe bekijkt moet je niet naar Recipe activity want die heeft recipe er al bij getypt
-
+        // The recipe id is put with the intent to RecipeActivity for the API getRequest
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
         intent.putExtra("recipe_id", recipeId);
         startActivity(intent);
@@ -71,10 +69,9 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         page ++;
         System.out.println("testje voor page" + page);
 
-        // The search word is redirected to the APISearchRequest
+        // The search word and page redirected to the APISearchRequest
         APISearchRequest RecipeRequest = new APISearchRequest(this);
         RecipeRequest.getAPIRecipes(this, search_word, page);
-
     }
 
     // GotRecipe so name, id and image are printed from the recipe
@@ -98,6 +95,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+//    TODO Waarom heet dit got users recipe moet andersom met die hierboven?
     @Override
     public void gotUsersRecipe (ArrayList<SearchRecipe> GetRecipe) {
         this.GetRecipe = GetRecipe;
@@ -108,7 +106,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
                     searchRecipe.getImage());
             arrayList.add(recipe);
         }
-        // The search word is redirected to the APISearchRequest
+        // The search word and page is redirected to the APISearchRequest
         APISearchRequest RecipeRequest = new APISearchRequest(this);
         RecipeRequest.getAPIRecipes(this, search_word, page);
 
