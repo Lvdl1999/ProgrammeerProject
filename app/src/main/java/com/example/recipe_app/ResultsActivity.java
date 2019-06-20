@@ -43,7 +43,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
         String recipeId = clickedrecipe.getId();
 
-//      TODO Als je user recipe bekijkt moet je niet naar Recipe activity want die heeft recipe er al bij getypt
+//  TODO Als je user recipe bekijkt moet je niet naar Recipe activity want die heeft recipe er al bij getypt
 
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
         intent.putExtra("recipe_id", recipeId);
@@ -61,10 +61,20 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
     public void next_clicked(View view) {
 
-//    TODO next 30 results
+//        TODO next 30 results
 //    When a user clicks on this button, the next 30 results will show.
 //    The API searchmethod only returns max 30 results at a time.
 //    To get the next 30 results, the same request can be used but use page 2 instead of 1
+
+
+//        page meegeven aan intent want nu begint ie altijd weer op 0 omdat ie zo is geinitialiseerd.
+        page ++;
+        System.out.println("testttttttje voor page" + page);
+
+        // The search word is redirected to the APISearchRequest
+        APISearchRequest RecipeRequest = new APISearchRequest(this);
+        RecipeRequest.getAPIRecipes(this, search_word, page);
+
 
     }
 
@@ -75,7 +85,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         for (int i2 = 0; i2 < recipe.size(); i2++) {
             SearchRecipe searchRecipe2 = (SearchRecipe) recipe.get(i2);
             SearchRecipe recipe2 = new SearchRecipe(searchRecipe2.getName(), searchRecipe2.getId(),
-                    searchRecipe2.getImage());
+                    searchRecipe2.getImage(), searchRecipe2.getRecipetag());
             arrayList.add(recipe2);
         }
         this.recipe = arrayList;
@@ -96,7 +106,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         for (int i = 0; i < GetRecipe.size(); i++) {
             SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
             SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
-                    searchRecipe.getImage());
+                    searchRecipe.getImage(), searchRecipe.getRecipetag());
             arrayList.add(recipe);
         }
         // The search word is redirected to the APISearchRequest
@@ -108,5 +118,4 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     public void gotUsersRecipeError (String message){
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
 }

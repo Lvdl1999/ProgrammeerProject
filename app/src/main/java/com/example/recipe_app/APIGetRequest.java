@@ -63,6 +63,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             String id = jsonObject.getString("recipe_id");
             String image = jsonObject.getString("image_url");
             String source = jsonObject.getString("source_url");
+            Boolean recipe_tag = jsonObject.getBoolean("recipetag");
 
             ArrayList ingredients_list = new ArrayList();
             JSONArray ingredients_json = jsonObject.getJSONArray("ingredients");
@@ -72,7 +73,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
                 System.out.println(j);
             }
 
-            GetRecipe get_recipe = new GetRecipe(title, id, image, source, ingredients_list);
+            GetRecipe get_recipe = new GetRecipe(title, id, image, source, recipe_tag, ingredients_list);
 
             callback.gotRecipe(get_recipe);
 
