@@ -67,5 +67,8 @@ Used the splitting method from http to https again because I haven't found anoth
 ### Day 12
 At first I had a really good start. Then I realized I had to make something to make sure the RecipeActivity could recognize whether the user clicked on an UserRecipe or API recipe. I started off quite enthousiasmic but then I messed up and didn't get it back as it was. So I had to go back to my last commit, which was were I left off yesterday. So I created a Recipe tag so it knows to do the right request. Also I created a GetRequest for the user recipes. This is not done yet. The tag does work for API recipes already.
 Also have worked on the next and previous button in the ResultsActivity but not done yet. 
+Update: thursday night. Both requests work and data is received by RecipeActivity. Difficulty was the difference in format from the user recipes and api recipes. Almost done only the ingredients have to me passed correctly to the RecipeActivity.
+I've reached my maximum of API calls, which is a total of 50. So tomorrow i'm gonna work on the next and previous button, invisibility at some point for some buttons, filtering user recipes with searchrequest.
+
 
 
