@@ -18,7 +18,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
     private String recipe_id;
     private String source_url;
-    private String tag;
+    private Boolean tag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +28,16 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         // This activity receives the clicked recipes id to do a GetResearch
         Intent intent = getIntent();
         recipe_id = (String) intent.getSerializableExtra("recipe_id");
+        tag = (Boolean) intent.getSerializableExtra("tag");
+        System.out.println("BOOLEAN IS BINNEN MET INTENT" + tag);
 
-        System.out.println("WELKE DING GEDRUKT?:" + recipe_id);
 
         // Depending on the kind of recipe the user clicked, there will be a different request
-        // API recipes get the tag "API recipe" and user recipes "user recipe"
-        if (this.tag == "API recipe"){
-            // APIGetRequest using the recipes id
+        // It's an API recipe if the tag boolean is 'true'
+        if (tag){
+        APIGetRequest GetRequest = new APIGetRequest(this);
+        GetRequest.getRecipes(this, recipe_id);
 
-            System.out.println("kan zoeken met tag");
-            APIGetRequest GetRequest = new APIGetRequest(this);
-            GetRequest.getRecipes(this, recipe_id);
         }
         else {
             UserGetRequest userGetRequest = new UserGetRequest(this);
@@ -46,10 +45,10 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         // In case it's an user recipe there is no browse button needed to redirect to online recipe
 //            TODO ff checken of dit knopje onzichtbaar is
-            findViewById(R.id.browse_button).setVisibility(View.INVISIBLE);
-        }
-
+        findViewById(R.id.browse_button).setVisibility(View.INVISIBLE);
     }
+
+}
 
     // Navigating from RecipeActivity to SearchActivity
     public void buttonback_clicked(View view) {
@@ -96,7 +95,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         this.source_url = getRecipe.getSource();
         ArrayList ingredients_text = getRecipe.getIngredients();
 
-        this.tag = getRecipe.getRecipetag();
 
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);
@@ -120,7 +118,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     @Override
     public void gotUsersRec(GetRecipe userRecipe) {
 
-        System.out.println("NOG EEN CCECKKK");
+
 
         // Saving textviews and imageview that will show a recipe
         ImageView image_recipe = findViewById(R.id.image_recipe);

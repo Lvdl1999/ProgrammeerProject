@@ -54,8 +54,11 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
                 jsonObject = response.getJSONObject(i);
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("id");
+
+                Boolean recipetag = false;
+
                 //String image = jsonObject.getString("image_url");
-                SearchRecipe recipe = new SearchRecipe(title, id, "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg");
+                SearchRecipe recipe = new SearchRecipe(title, id, "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg", recipetag);
                 arrayList.add(recipe);
             }
 

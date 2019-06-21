@@ -18,6 +18,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     private int page = 0;
     private GridView recipe_GridView;
     private ArrayList arrayList = new ArrayList();
+    private Boolean tag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Intent intent = getIntent();
         search_word = (String) intent.getStringExtra("search_word");
 
+//        TODO waarom zit deze request in oncreate?
         UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
         userRecipeRequest.getUsersRecipe(this);
 
@@ -41,10 +43,17 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         // Get the GridView selected/clicked item text
         SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
         String recipeId = clickedrecipe.getId();
+        Boolean tag = clickedrecipe.getRecipetag();
 
-        // The recipe id is put with the intent to RecipeActivity for the API getRequest
+
+        // The recipe id and tag is put with the intent to RecipeActivity for the API getRequest
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
-        intent.putExtra("recipe_id", recipeId);
+
+        Bundle extras = new Bundle();
+        extras.putBoolean("tag", tag);
+        extras.putString("recipe_id", recipeId);
+
+        intent.putExtras(extras);
         startActivity(intent);
 
             }
@@ -81,7 +90,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         for (int i2 = 0; i2 < recipe.size(); i2++) {
             SearchRecipe searchRecipe2 = (SearchRecipe) recipe.get(i2);
             SearchRecipe recipe2 = new SearchRecipe(searchRecipe2.getName(), searchRecipe2.getId(),
-                    searchRecipe2.getImage());
+                    searchRecipe2.getImage(), searchRecipe2.getRecipetag());
             arrayList.add(recipe2);
         }
         this.recipe = arrayList;
@@ -103,7 +112,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         for (int i = 0; i < GetRecipe.size(); i++) {
             SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
             SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
-                    searchRecipe.getImage());
+                    searchRecipe.getImage(), searchRecipe.getRecipetag());
             arrayList.add(recipe);
         }
         // The search word and page is redirected to the APISearchRequest

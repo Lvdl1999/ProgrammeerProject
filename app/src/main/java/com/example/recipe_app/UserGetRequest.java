@@ -33,7 +33,7 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
     UserGetRequest(Context context){
         this.context = context;
     }
-    public void getUsersRecipe(Callback callback){
+    public void getUsersRecipe(UserGetRequest.Callback callback){
         this.callback = callback;
 
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
@@ -64,17 +64,20 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("id");
                 String recipe = jsonObject.getString("recipe");
+
+                System.out.println("test recept = " + recipe);
+
 //                TODO ingredients krijg je in string maar moet als lijst door worden gegeven.
                 ArrayList ingredients = null;
 
 //              Arraylist op [0] is het recept ? Of niet, anders is dat je string
 
 
-                String recipetag = "users recipe";
+                Boolean recipetag = false;
                 //String image = jsonObject.getString("image_url");
 
                 String user_image = "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg";
-                GetRecipe user_recipe = new GetRecipe(title, id, user_image, recipe, recipetag, ingredients);
+                GetRecipe user_recipe = new GetRecipe(title, id, user_image, recipe, ingredients);
                 callback.gotUsersRec(user_recipe);
             }
 

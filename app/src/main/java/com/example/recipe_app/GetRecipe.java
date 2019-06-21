@@ -6,16 +6,15 @@ import java.util.ArrayList;
 
 public class GetRecipe implements Serializable{
 
-    private String name, id, image, source, recipetag;
+    private String name, id, image, source;
     private ArrayList ingredients;
 
-    GetRecipe(String name, String id, String image, String source, String recipetag, ArrayList ingredients){
+    GetRecipe(String name, String id, String image, String source, ArrayList ingredients){
         this.name = name;
         this.id = id;
         this.image = image;
         this.source = source;
         this.ingredients = ingredients;
-        this.recipetag = recipetag;
     }
 
     // Getters
@@ -35,8 +34,5 @@ public class GetRecipe implements Serializable{
         return ingredients;
     }
 
-    public String getRecipetag() {
-        return recipetag;
-    }
 
 }

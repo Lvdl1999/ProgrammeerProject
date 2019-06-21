@@ -20,6 +20,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     private Callback callback;
     private Context context;
 
+
     // Describes what the callback should get back and it's methods will show how
     public interface Callback {
 
@@ -63,7 +64,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             String id = jsonObject.getString("recipe_id");
             String image = jsonObject.getString("image_url");
             String source = jsonObject.getString("source_url");
-            String recipe_tag = "API recipe";
+
 
             ArrayList ingredients_list = new ArrayList();
             JSONArray ingredients_json = jsonObject.getJSONArray("ingredients");
@@ -72,7 +73,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
                 ingredients_list.add(ingredients_json.getString(j));
             }
 
-            GetRecipe get_recipe = new GetRecipe(title, id, image, source, recipe_tag, ingredients_list);
+            GetRecipe get_recipe = new GetRecipe(title, id, image, source, ingredients_list);
 
             callback.gotRecipe(get_recipe);
 

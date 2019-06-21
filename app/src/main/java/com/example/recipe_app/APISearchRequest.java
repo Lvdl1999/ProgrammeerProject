@@ -17,6 +17,7 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
 
     private Callback callback;
     private Context context;
+    private boolean isAPI = true;
 
     // Describes what the callback should get back and it's methods will show how
     public interface Callback {
@@ -63,7 +64,9 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("recipe_id");
                 String image = jsonObject.getString("image_url");
-                SearchRecipe recipe = new SearchRecipe(title, id, image);
+                Boolean recipe_tag = isAPI;
+
+                SearchRecipe recipe = new SearchRecipe(title, id, image, recipe_tag);
                 arrayList.add(recipe);
             }
 
