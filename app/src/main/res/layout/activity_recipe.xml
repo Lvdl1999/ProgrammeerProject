@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:onClick="buttonback_clicked"
+        android:onClick="buttonbackClicked"
         android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="608dp"
         android:layout_marginEnd="4dp"
-        android:onClick="addfavorites_clicked"
+        android:onClick="addfavoritesClicked"
         android:text="Add to favorites!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="52dp"
-        android:onClick="showgrocery_clicked"
+        android:onClick="showgroceryClicked"
         android:text="Show grocerylist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
         android:layout_marginBottom="152dp"
-        android:onClick="browse_recipe"
+        android:onClick="browseRecipe"
         android:text="View recipe online"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -80,7 +80,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="Back to menu"
-        android:onClick="gobackmenu"
+        android:onClick="gobackToMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -20,28 +20,26 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
     private Context context;
     private Callback callback;
 
+    // Describes what the callback should get back and it's methods will show how
     public interface Callback{
         void gotUsersRecipe (ArrayList<SearchRecipe> GetRecipe);
         void gotUsersRecipeError (String message);
     }
+
+    // Constructor for UserGetRequest that accepts a Context type parameter
     UsersRecipeRequest(Context context){
         this.context = context;
     }
     public void getUsersRecipe(Callback callback){
         this.callback = callback;
-        // String url.... van server
-        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
 
+        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
         queue.add(jsonArrayRequest);
     }
 
-    @Override
-    public void onErrorResponse(VolleyError error) {
-        callback.gotUsersRecipeError(error.getMessage());
-    }
-
+    // This method is called when the request goes as expected
     @Override
     public void onResponse(JSONArray response) {
 
@@ -55,18 +53,23 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("id");
 
+                // An users recipe goes with the tag 'isAPI' being false to underestimate
                 Boolean recipetag = false;
 
                 //String image = jsonObject.getString("image_url");
                 SearchRecipe recipe = new SearchRecipe(title, id, "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg", recipetag);
                 arrayList.add(recipe);
             }
-
-
             callback.gotUsersRecipe(arrayList);
         }
         catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    // This method is called when something about the request goes wrong
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        callback.gotUsersRecipeError(error.getMessage());
     }
 }

@@ -12,8 +12,6 @@ import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +19,13 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     // Navigating from SearchActivity to MainActivity
-    public void backtomenu_clicked(View view) {
+    public void backtomenuClicked(View view) {
         Intent menu = new Intent(SearchActivity.this, MainActivity.class);
         startActivity(menu);
     }
 
     // Navigating from SearchActivity to ResultsActivity
-    public void recipesearch_clicked(View view) {
+    public void recipesearchClicked(View view) {
 
         // Saving the users given searchword that was typed in the search bar
         EditText search = (EditText) findViewById(R.id.search_bar);

@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="24dp"
-        android:onClick="back_clicked"
+        android:onClick="backClicked"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
-        android:onClick="next_clicked"
+        android:onClick="nextClicked"
         android:text="Next page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -52,7 +52,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
         android:text="Previous"
-        android:onClick="previous_clicked"
+        android:onClick="previousClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

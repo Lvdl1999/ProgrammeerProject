@@ -30,12 +30,13 @@ public class UploadActivity extends AppCompatActivity {
     }
 
     // Navigating from UploadActivity back to MainActivity
-    public void tomenu_clicked(View view) {
+    public void tomenuClicked(View view) {
         Intent tomenu = new Intent(UploadActivity.this, MainActivity.class);
         startActivity(tomenu);
     }
 
-    public void uploadrecipe_clicked(View view) {
+    // This method is called when the user wants to upload the recipe
+    public void uploadrecipeClicked(View view) {
 
         // Saving all Edittexts and getting uploaded title, name, email, recipe and ingredients
         EditText title = findViewById(R.id.title);
@@ -49,7 +50,7 @@ public class UploadActivity extends AppCompatActivity {
         EditText recipe = findViewById(R.id.recipe);
         String user_recipe = recipe.getText().toString();
 
-        // Making sure the user fills in all the Edit texts or the app will show a toast message
+        // Making sure the user filled in all the Edit texts or the app will show a toast message
         if((user_title.equals("") || user_title == null)){
             Toast.makeText(this, "Fill in a Title", Toast.LENGTH_LONG).show();
         }

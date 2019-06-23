@@ -29,7 +29,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="Back to menu"
-        android:onClick="backtomenu_clicked"
+        android:onClick="backtomenuClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
         android:layout_marginBottom="252dp"
-        android:onClick="recipesearch_clicked"
+        android:onClick="recipesearchClicked"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

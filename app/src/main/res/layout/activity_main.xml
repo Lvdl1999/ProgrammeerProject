@@ -13,7 +13,7 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="420dp"
         android:text="Let's find some!"
-        android:onClick="gotosearch_clicked"
+        android:onClick="gotosearchClicked"
         android:background="@drawable/btn_shape_round"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="48dp"
-        android:onClick="gotofavorites_clicked"
+        android:onClick="gotofavoritesClicked"
         android:text="Favorite recipes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -36,7 +36,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="28dp"
         android:text="Upload your own recipe"
-        android:onClick="upload_clicked"
+        android:onClick="uploadClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

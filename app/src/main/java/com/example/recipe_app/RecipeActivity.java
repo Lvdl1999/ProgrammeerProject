@@ -30,16 +30,13 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         recipe_id = (String) intent.getSerializableExtra("recipe_id");
         tag = (Boolean) intent.getSerializableExtra("tag");
         System.out.println("BOOLEAN IS BINNEN MET INTENT" + tag);
-
-
+        
         // Depending on the kind of recipe the user clicked, there will be a different request
         // It's an API recipe if the tag boolean is 'true'
         if (tag){
-
         // Performing an APIGetRequest
         APIGetRequest GetRequest = new APIGetRequest(this);
         GetRequest.getRecipes(this, recipe_id);
-
         }
         else {
             // Performing a UsersGetRequest
@@ -53,32 +50,32 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 }
 
     // Navigating from RecipeActivity to SearchActivity
-    public void buttonback_clicked(View view) {
+    public void buttonbackClicked(View view) {
         Intent menu = new Intent(RecipeActivity.this, SearchActivity.class);
         startActivity(menu);
     }
 
     // Navigating from RecipeActivity to MainActivity
-    public void gobackmenu(View view) {
+    public void gobackToMenu(View view) {
         Intent menu = new Intent(RecipeActivity.this, MainActivity.class);
         startActivity(menu);
     }
 
     // TODO Adding current recipe to favorites
-    public void addfavorites_clicked(View view) {
+    public void addfavoritesClicked(View view) {
         // When the user looks at a recipe it's possible to add to favorites through this method.
         // The user has to click this button and the recipe will be added to their favorites list.
         // Which is also a listview in FavoritesActivity.
     }
 
     // Navigating from RecipeActivity to GroceryActivity
-    public void showgrocery_clicked(View view) {
+    public void showgroceryClicked(View view) {
         Intent grocery = new Intent(RecipeActivity.this, GroceryActivity.class);
         startActivity(grocery);
     }
 
     // Clicking this button will redirect to the source url of the recipe
-    public void browse_recipe(View view) {
+    public void browseRecipe(View view) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(this.source_url));
         startActivity(browserIntent);
     }
@@ -97,7 +94,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         String recipeName = getRecipe.getName();
         this.source_url = getRecipe.getSource();
         ArrayList ingredients_text = getRecipe.getIngredients();
-
 
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);

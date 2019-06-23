@@ -14,7 +14,7 @@ public class FavoritesActivity extends AppCompatActivity {
     }
 
     // Navigating from FavoritesActivity to MainActivity
-    public void menubutton_clicked(View view) {
+    public void menubuttonClicked(View view) {
         Intent menu = new Intent(FavoritesActivity.this, MainActivity.class);
         startActivity(menu);
     }

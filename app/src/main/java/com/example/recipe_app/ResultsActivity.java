@@ -30,6 +30,8 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Intent intent = getIntent();
         search_word = (String) intent.getStringExtra("search_word");
 
+        // Performing an API request for the next 30 results
+        // The 'previous' button will be invisible incase the app is at page 0
 //        page = (int) intent.getIntExtra("page", 0);
 //        if(page == 0) {
 //            UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
@@ -38,8 +40,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 //            previous.setVisibility(View.GONE);
 //        }
 
-//        TODO waarom zit deze request in oncreate?
-        // Performing a UsersRecipeRequest
+        // Performing an UsersRecipeRequest
         UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
         userRecipeRequest.getUsersRecipe(this);
 
@@ -55,7 +56,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         String recipeId = clickedrecipe.getId();
         Boolean tag = clickedrecipe.getRecipetag();
 
-
         // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
 
@@ -65,33 +65,30 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
         intent.putExtras(extras);
         startActivity(intent);
-
             }
         });
     }
 
     // Navigating from ResultsActivity to SearchActivity
-    public void back_clicked(View view) {
+    public void backClicked(View view) {
         Intent back = new Intent(ResultsActivity.this, SearchActivity.class);
         startActivity(back);
     }
 
-    public void previous_clicked(View view) {
+    // This method is called when the user presses the 'previous' button
+    public void previousClicked(View view) {
+        // The resultsActivity will show the previous 30 results of the API recipes
         page--;
         Intent results = new Intent(ResultsActivity.this, ResultsActivity.class);
         results.putExtra("search_word", search_word);
         results.putExtra("page", page);
         startActivity(results);
-
     }
 
-    public void next_clicked(View view) {
-
+    // This method is called when the user presses the 'next' button
+    public void nextClicked(View view) {
 //        TODO next 30 results
-//    When a user clicks on this button, the next 30 results will show.
-//    The API searchmethod only returns max 30 results at a time.
-//    To get the next 30 results, the same request can be used but use page 2 instead of 1
-
+        // The resultsActivity will show the next 30 results of the API recipes
         page ++;
         Intent results = new Intent(ResultsActivity.this, ResultsActivity.class);
         results.putExtra("search_word", search_word);

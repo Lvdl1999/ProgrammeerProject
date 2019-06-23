@@ -26,29 +26,23 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
         void gotRecipeError (String message);
     }
 
-    // Constructor
+    // Constructor for APISearchRequest that accepts a Context type parameter
     APISearchRequest(Context context){
         this.context = context;
     }
 
-    public void getAPIRecipes(Callback callback, String key, int page){
-        // key is variable to the searchword of the user
-        // page is used as a variable to get the next or previous 30 results
-        String url =  "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3&q="+key+"&page="+page;
+    // This method attempts to retrieve categories from the API
+    public void getAPIRecipes(Callback callback, String searchword, int page){
+        // Searchword is a variable to use the given searchword by the user
+        // Page is used as a variable to get the next or previous 30 results
+        String url =  "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3&q="+searchword+"&page="+page;
         this.callback = callback;
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
         requestRecipe.add(jsonObjectRequest);
     }
 
-
-    // Something went wrong --> Errormessage
-    @Override
-    public void onErrorResponse(VolleyError error) {
-        callback.gotRecipeError(error.getMessage());
-    }
-
-    // Everything went well, JSON object was returned
+    // This method is called when the request goes as expected
     @Override
     public void onResponse(JSONObject response) {
 
@@ -64,6 +58,8 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("recipe_id");
                 String image = jsonObject.getString("image_url");
+
+                // An API recipe goes with the tag 'isAPI' being true to underestimate
                 Boolean recipe_tag = isAPI;
 
                 SearchRecipe recipe = new SearchRecipe(title, id, image, recipe_tag);
@@ -76,4 +72,11 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
             e.printStackTrace();
         }
     }
+
+    // This method is called when something about the request goes wrong
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        callback.gotRecipeError(error.getMessage());
+    }
+
 }

@@ -59,7 +59,7 @@ public class ResultsAdapter extends ArrayAdapter {
             }
         });
 
-        // Set recipes image
+        // Set recipes image to corresponding imageview
         Picasso pic = builder.build();
         pic.load(currentString).into(image);
 

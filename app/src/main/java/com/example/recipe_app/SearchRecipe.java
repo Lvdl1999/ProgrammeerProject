@@ -13,7 +13,7 @@ public class SearchRecipe implements Serializable {
         this.recipetag = recipetag;
     }
 
-    // Getters
+    // Getters for all fields
     public String getName(){
         return name;
     }

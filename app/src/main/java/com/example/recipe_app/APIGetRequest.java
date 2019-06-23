@@ -28,37 +28,26 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
         void gotRecipeError(String message);
     }
 
-    // Constructor
+    // Constructor for APIGetRequest that accepts a Context type parameter
     APIGetRequest(Context context){
         this.context = context;
     }
-
+    // This method attempts to retrieve categories from the API
     public void getRecipes(APIGetRequest.Callback callback, String id){
 
         this.callback = callback;
         String url = "https://www.food2fork.com/api/get?key=8413a4deaec24af1f8da381c9f6719a3&rId="+id;
-
-//        https://www.food2fork.com/api/search?key={API_KEY}&q=shredded%20chicken
-
 
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
         requestRecipe.add(jsonObjectRequest);
     }
 
-    // Something went wrong --> Errormessage
-    @Override
-    public void onErrorResponse(VolleyError error) {
-        callback.gotRecipeError(error.getMessage());
-    }
-
-    // Everything went well, JSON object was returned
+    // This method is called when the request goes as expected
     @Override
     public void onResponse(JSONObject response) {
 
         System.out.println("get request gelukt");
-
-        ArrayList arrayList = new ArrayList();
 
         try {
             JSONObject jsonObject = response.getJSONObject("recipe");
@@ -86,4 +75,11 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             e.printStackTrace();
         }
     }
+
+    // This method is called when something about the request goes wrong
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        callback.gotRecipeError(error.getMessage());
+    }
+
 }
