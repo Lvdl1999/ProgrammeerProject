@@ -11,7 +11,7 @@
         android:layout_width="198dp"
         android:layout_height="76dp"
         android:layout_marginStart="104dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="132dp"
         android:background="@drawable/btn_rounded"
         android:onClick="gotosearchClicked"
         android:text="Let's find some!"
@@ -44,16 +44,14 @@
 
     <TextView
         android:id="@+id/title_app"
-        android:layout_width="332dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="100dp"
-        android:text="WHAT'S IN YOUR FRIDGE?"
+        android:layout_width="342dp"
+        android:layout_height="456dp"
+        android:layout_marginStart="36dp"
+        android:background="@drawable/fridgeLogo"
         android:textAlignment="center"
-        android:textColor="#0E7C61"
+        android:textColor="@android:color/white"
         android:textSize="30sp"
-        android:textStyle="italic"
-        android:background="@drawable/txtview_border"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,7 +60,7 @@
         android:layout_width="359dp"
         android:layout_height="41dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="464dp"
         android:layout_marginEnd="8dp"
         android:text="Don't have any inspiration on what to cook?"
         android:textAlignment="textStart"
@@ -72,15 +70,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="196dp"
-        android:fontFamily="sans-serif-thin"
-        android:text="By Levy van der Linde"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
