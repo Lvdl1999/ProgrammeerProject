@@ -27,19 +27,17 @@ public class UploadActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
-
     }
 
     // Navigating from UploadActivity back to MainActivity
     public void tomenu_clicked(View view) {
-
         Intent tomenu = new Intent(UploadActivity.this, MainActivity.class);
         startActivity(tomenu);
     }
 
     public void uploadrecipe_clicked(View view) {
 
-        // Saving all Edittexts and getting title, name, email, recipe and ingredients
+        // Saving all Edittexts and getting uploaded title, name, email, recipe and ingredients
         EditText title = findViewById(R.id.title);
         String user_title = title.getText().toString();
         EditText email = findViewById(R.id.email);
@@ -51,7 +49,7 @@ public class UploadActivity extends AppCompatActivity {
         EditText recipe = findViewById(R.id.recipe);
         String user_recipe = recipe.getText().toString();
 
-        // Making sure the user fills in all the Edit texts or the app shows a toast message
+        // Making sure the user fills in all the Edit texts or the app will show a toast message
         if((user_title.equals("") || user_title == null)){
             Toast.makeText(this, "Fill in a Title", Toast.LENGTH_LONG).show();
         }
@@ -72,10 +70,11 @@ public class UploadActivity extends AppCompatActivity {
         }
     }
 
+    // This method will upload the users recipe parameters to the database
     private void uploadRecipe(final String title, final String email, final String name,
                               final String recipe, final String ingredients){
 
-//         TODO Standaard plaatje voor users recipes
+        //      TODO Standaard plaatje voor users recipes
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
         new Response.Listener<String>() {
@@ -98,8 +97,11 @@ public class UploadActivity extends AppCompatActivity {
                 return MyRecipes;
             }
         };
+        // Performing the database request to add a user recipe
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(stringRequest);
+
+        // This toastmessage is shown when the user has uploaded a complete recipe
         Toast.makeText(this, "Succesfully uploaded your recipe!", Toast.LENGTH_LONG).show();
     }
 }

@@ -22,7 +22,6 @@ public class SearchActivity extends AppCompatActivity {
 
     // Navigating from SearchActivity to MainActivity
     public void backtomenu_clicked(View view) {
-
         Intent menu = new Intent(SearchActivity.this, MainActivity.class);
         startActivity(menu);
     }
@@ -30,10 +29,12 @@ public class SearchActivity extends AppCompatActivity {
     // Navigating from SearchActivity to ResultsActivity
     public void recipesearch_clicked(View view) {
 
+        // Saving the users given searchword that was typed in the search bar
         EditText search = (EditText) findViewById(R.id.search_bar);
         String search_word =  search.getText().toString();
         Intent results = new Intent(SearchActivity.this, ResultsActivity.class);
 
+        // The users searchword is put in the intent to perform a GetRequest in the ResultsActivity
         results.putExtra("search_word", search_word);
         startActivity(results);
 

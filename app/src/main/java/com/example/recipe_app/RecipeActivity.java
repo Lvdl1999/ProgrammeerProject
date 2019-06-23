@@ -35,19 +35,21 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         // Depending on the kind of recipe the user clicked, there will be a different request
         // It's an API recipe if the tag boolean is 'true'
         if (tag){
+
+        // Performing an APIGetRequest
         APIGetRequest GetRequest = new APIGetRequest(this);
         GetRequest.getRecipes(this, recipe_id);
 
         }
         else {
+            // Performing a UsersGetRequest
             UserGetRequest userGetRequest = new UserGetRequest(this);
             userGetRequest.getUsersRecipe(this);
 
-        // In case it's an user recipe there is no browse button needed to redirect to online recipe
-//            TODO ff checken of dit knopje onzichtbaar is
-        findViewById(R.id.browse_button).setVisibility(View.INVISIBLE);
+            // If it's an user recipe there is no browse button needed to redirect to online recipe
+            // so in this case the button won't show
+            findViewById(R.id.browse_button).setVisibility(View.INVISIBLE);
     }
-
 }
 
     // Navigating from RecipeActivity to SearchActivity
@@ -81,6 +83,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         startActivity(browserIntent);
     }
 
+    // This method is called when the request goes as expected
     @Override
     public void gotRecipe(GetRecipe getRecipe) {
 
@@ -99,35 +102,37 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);
 
-//        TODO ingredients uit lijst in textview
+//        TODO ingredients uit lijst in textview zien te krijgen
 
-        // Before the url can be set to the image, it is updated from a 'http' to 'https' link
+        // Before the url can be set to the image, it is updated from a 'http' to a 'https' link
         String currentString = image_url;
         String[] seperated = currentString.split(":");
         currentString = seperated[0] + "s:" + seperated[1];
 
-        // Setting image_url to image view
+        // Setting image_url to corresponding image view
         Picasso.with(this).load(currentString).into(recipe_image);
     }
 
+    // This method is called when something about the request goes wrong
     @Override
     public void gotRecipeError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
+    // This method is called when the request goes as expected
     @Override
     public void gotUsersRec(GetRecipe userRecipe) {
 
-
-
-        // Saving textviews and imageview that will show a recipe
+        // Saving textviews and imageview that will be used to show a recipe
         ImageView image_recipe = findViewById(R.id.image_recipe);
         TextView ingredients = findViewById(R.id.ingredients);
         TextView title = findViewById(R.id.title);
         TextView recipe = findViewById(R.id.recipe_text);
 
-        // Get image_url, name, recipe and ingredients from the clicked userrecipe
+        // Get image_url, recipe name, recipe and ingredients from the clicked userrecipe
         // TODO toelichten van gebruik getSource voor recipe?
+        // An userrecipe doesn't come with a source url to the recipe so this variable was used to
+        // pass the users recipe along
         String users_title = userRecipe.getName();
         String recipe_text = userRecipe.getSource();
         String image_url = userRecipe.getImage();
@@ -135,7 +140,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         System.out.println("receptje:" + recipe_text);
 
-        // Set title, ingredients and recipe to textviews in RecipeActivity
+        // Set title, ingredients and recipe to corresponding textviews in RecipeActivity
         title.setText(users_title);
         recipe.setText(recipe_text);
 
@@ -148,6 +153,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         Picasso.with(this).load(currentString).into(image_recipe);
     }
 
+    // This method is called when something about the request goes wrong
     @Override
     public void gotUsersRecError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();

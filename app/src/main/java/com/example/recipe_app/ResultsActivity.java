@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -15,7 +16,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     private ArrayList recipe;
     private ArrayList GetRecipe;
     private String search_word;
-    private int page = 0;
+    private int page;
     private GridView recipe_GridView;
     private ArrayList arrayList = new ArrayList();
     private Boolean tag;
@@ -29,7 +30,16 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Intent intent = getIntent();
         search_word = (String) intent.getStringExtra("search_word");
 
+//        page = (int) intent.getIntExtra("page", 0);
+//        if(page == 0) {
+//            UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
+//            userRecipeRequest.getUsersRecipe(this, search_word);
+//            Button previous = (Button) findViewById(R.id.button3);
+//            previous.setVisibility(View.GONE);
+//        }
+
 //        TODO waarom zit deze request in oncreate?
+        // Performing a UsersRecipeRequest
         UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
         userRecipeRequest.getUsersRecipe(this);
 
@@ -46,7 +56,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Boolean tag = clickedrecipe.getRecipetag();
 
 
-        // The recipe id and tag is put with the intent to RecipeActivity for the API getRequest
+        // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
         Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
 
         Bundle extras = new Bundle();
@@ -66,6 +76,15 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         startActivity(back);
     }
 
+    public void previous_clicked(View view) {
+        page--;
+        Intent results = new Intent(ResultsActivity.this, ResultsActivity.class);
+        results.putExtra("search_word", search_word);
+        results.putExtra("page", page);
+        startActivity(results);
+
+    }
+
     public void next_clicked(View view) {
 
 //        TODO next 30 results
@@ -73,17 +92,14 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 //    The API searchmethod only returns max 30 results at a time.
 //    To get the next 30 results, the same request can be used but use page 2 instead of 1
 
-
-//        page meegeven aan intent want nu begint ie altijd weer op 0 omdat ie zo is geinitialiseerd.
         page ++;
-        System.out.println("testje voor page" + page);
-
-        // The search word and page redirected to the APISearchRequest
-        APISearchRequest RecipeRequest = new APISearchRequest(this);
-        RecipeRequest.getAPIRecipes(this, search_word, page);
+        Intent results = new Intent(ResultsActivity.this, ResultsActivity.class);
+        results.putExtra("search_word", search_word);
+        results.putExtra("page", page);
+        startActivity(results);
     }
 
-    // GotRecipe so name, id and image are printed from the recipe
+    // This method is called when the request goes as expected
     @Override
     public void gotRecipe(ArrayList<SearchRecipe> recipe) {
 
@@ -98,13 +114,14 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         recipe_GridView.setAdapter(resultsAdapter);
     }
 
-    // Returning a toast message if request went wrong
+    // This method is called when something about the request goes wrong
     @Override
     public void gotRecipeError(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-//    TODO Waarom heet dit got users recipe moet andersom met die hierboven?
+
+    // This method is called when the request goes as expected
     @Override
     public void gotUsersRecipe (ArrayList<SearchRecipe> GetRecipe) {
         this.GetRecipe = GetRecipe;
@@ -115,13 +132,17 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
                     searchRecipe.getImage(), searchRecipe.getRecipetag());
             arrayList.add(recipe);
         }
-        // The search word and page is redirected to the APISearchRequest
+        // The search word and page are redirected to the APISearchRequest
+        // Performing an APISearchRequest
         APISearchRequest RecipeRequest = new APISearchRequest(this);
         RecipeRequest.getAPIRecipes(this, search_word, page);
 
     }
+
+    // This method is called when something about the request goes wrong
     @Override
     public void gotUsersRecipeError (String message){
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
+
 }
