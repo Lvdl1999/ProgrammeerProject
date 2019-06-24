@@ -19,6 +19,7 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
 
     private Context context;
     private Callback callback;
+    private String keyword;
 
     // Describes what the callback should get back and it's methods will show how
     public interface Callback{
@@ -32,8 +33,8 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
     }
     public void getUsersRecipe(Callback callback, String id){
         this.callback = callback;
+        this.keyword = id;
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
-        //String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?ingredients=" +id;
 
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
@@ -55,14 +56,32 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
                 jsonObject = response.getJSONObject(i);
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("id");
+                String ingredients = jsonObject.getString("ingredients");
 
                 // An users recipe goes with the tag 'isAPI' being false to underestimate
                 Boolean recipetag = false;
 
                 //String image = jsonObject.getString("image_url");
                 SearchRecipe recipe = new SearchRecipe(title, id, "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg", recipetag);
-                arrayList.add(recipe);
+
+                String[] keyword_seperate = keyword.split(",");
+                boolean contain = false;
+                for(int j = 0; j <keyword_seperate.length; j++) {
+                    if (ingredients.contains(keyword_seperate[j])) {
+                        contain = true;
+                        System.out.println("does contain the word");
+                    }
+                    else {
+                        contain = false;
+                        System.out.println("doesnt contain the word");
+                        break;
+                    }
+                }
+                if(contain) {
+                    arrayList.add(recipe);
+                }
             }
+
             callback.gotUsersRecipe(arrayList);
         }
         catch (JSONException e) {

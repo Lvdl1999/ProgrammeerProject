@@ -58,12 +58,15 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
-        android:layout_width="44dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
+        android:onClick="uploadClicked"
+        android:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/darkGreen"
         app:srcCompat="@android:drawable/ic_input_add" />
 </android.support.constraint.ConstraintLayout>

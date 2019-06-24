@@ -36,7 +36,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     public void getRecipes(APIGetRequest.Callback callback, String id){
 
         this.callback = callback;
-        String url = "https://www.food2fork.com/api/get?key=e2923f01061e85612e462bb2883ed039&rId="+id;
+        String url = "https://www.food2fork.com/api/get?key=d568815d7a20340e63187b34e2cc6d89&rId="+id;
 
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);

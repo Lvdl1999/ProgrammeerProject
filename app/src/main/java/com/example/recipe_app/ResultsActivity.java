@@ -97,6 +97,12 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         startActivity(results);
     }
 
+    // Navigating from ResultsActivity to UploadActivity
+    public void uploadClicked(View view) {
+        Intent back = new Intent(ResultsActivity.this, UploadActivity.class);
+        startActivity(back);
+    }
+
     // This method is called when the request goes as expected
     @Override
     public void gotRecipe(ArrayList<SearchRecipe> recipe) {
@@ -146,5 +152,4 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     public void gotUsersRecipeError (String message){
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
 }
