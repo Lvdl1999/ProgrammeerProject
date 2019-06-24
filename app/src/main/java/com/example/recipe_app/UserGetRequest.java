@@ -34,10 +34,12 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
     UserGetRequest(Context context){
         this.context = context;
     }
-    public void getUsersRecipe(UserGetRequest.Callback callback){
+    public void getUsersRecipe(UserGetRequest.Callback callback, String id){
         this.callback = callback;
-
+        //TODO id fixen
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
+        //String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?id="+ id;
+
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
         queue.add(jsonArrayRequest);
@@ -55,16 +57,17 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
                 String title = jsonObject.getString("title");
                 String id = jsonObject.getString("id");
                 String recipe = jsonObject.getString("recipe");
+                String ingredients = jsonObject.getString("ingredients");
 
-                System.out.println("test recept = " + recipe);
+                String[] recipe_seperate = ingredients.split(",");
+                ArrayList<String> ingredients_array = new ArrayList<>();
+                for(int j =0; i< recipe_seperate.length; i++){
+                    ingredients_array.add(recipe_seperate[j]);
+                }
 
-//         TODO ingredients krijg je in string maar moet als lijst door worden gegeven.
-                ArrayList ingredients = null;
-
-//              Arraylist op [0] is het recept ? Of niet, anders is dat je string
 
                 String user_image = "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg";
-                GetRecipe user_recipe = new GetRecipe(title, id, user_image, recipe, ingredients);
+                GetRecipe user_recipe = new GetRecipe(title, id, user_image, recipe, ingredients_array);
                 callback.gotUsersRec(user_recipe);
             }
         }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,24 +31,24 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         recipe_id = (String) intent.getSerializableExtra("recipe_id");
         tag = (Boolean) intent.getSerializableExtra("tag");
         System.out.println("BOOLEAN IS BINNEN MET INTENT" + tag);
-        
+
         // Depending on the kind of recipe the user clicked, there will be a different request
         // It's an API recipe if the tag boolean is 'true'
         if (tag){
-        // Performing an APIGetRequest
-        APIGetRequest GetRequest = new APIGetRequest(this);
-        GetRequest.getRecipes(this, recipe_id);
+            // Performing an APIGetRequest
+            APIGetRequest GetRequest = new APIGetRequest(this);
+            GetRequest.getRecipes(this, recipe_id);
         }
         else {
             // Performing a UsersGetRequest
             UserGetRequest userGetRequest = new UserGetRequest(this);
-            userGetRequest.getUsersRecipe(this);
+            userGetRequest.getUsersRecipe(this, recipe_id);
 
             // If it's an user recipe there is no browse button needed to redirect to online recipe
             // so in this case the button won't show
             findViewById(R.id.browse_button).setVisibility(View.INVISIBLE);
+        }
     }
-}
 
     // Navigating from RecipeActivity to SearchActivity
     public void buttonbackClicked(View view) {
@@ -57,7 +58,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
     // Navigating from RecipeActivity to MainActivity
     public void gobackToMenu(View view) {
-        Intent menu = new Intent(RecipeActivity.this, MainActivity.class);
+        Intent menu = new Intent(RecipeActivity.this, SearchActivity.class);
         startActivity(menu);
     }
 
@@ -86,7 +87,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         // Saving textviews and imageview that will show a recipe
         ImageView recipe_image = findViewById(R.id.image_recipe);
-        TextView ingredients = findViewById(R.id.ingredients);
+        ListView ingredients = findViewById(R.id.ingredients_text);
         TextView title = findViewById(R.id.title);
 
         // Get image_url, name, source_url and ingredients from the clicked recipe
@@ -97,7 +98,9 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);
-
+        //Set adapter
+        RecipeAdapter adapter = new RecipeAdapter(RecipeActivity.this, R.layout.ingredients_adapter, ingredients_text);
+        ingredients.setAdapter(adapter);
 //        TODO ingredients uit lijst in textview zien te krijgen
 
         // Before the url can be set to the image, it is updated from a 'http' to a 'https' link
@@ -121,20 +124,18 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         // Saving textviews and imageview that will be used to show a recipe
         ImageView image_recipe = findViewById(R.id.image_recipe);
-        TextView ingredients = findViewById(R.id.ingredients);
+        ListView ingredients = findViewById(R.id.ingredients_text);
         TextView title = findViewById(R.id.title);
         TextView recipe = findViewById(R.id.recipe_text);
 
-        // Get image_url, recipe name, recipe and ingredients from the clicked userrecipe
-        // TODO toelichten van gebruik getSource voor recipe?
-        // An userrecipe doesn't come with a source url to the recipe so this variable was used to
-        // pass the users recipe along
         String users_title = userRecipe.getName();
         String recipe_text = userRecipe.getSource();
         String image_url = userRecipe.getImage();
-//        TODO ingredienten opvragen en vullen.
+        ArrayList ingredients_text = userRecipe.getIngredients();
 
-        System.out.println("receptje:" + recipe_text);
+
+        RecipeAdapter adapter = new RecipeAdapter(RecipeActivity.this, R.layout.ingredients_adapter, ingredients_text);
+        ingredients.setAdapter(adapter);
 
         // Set title, ingredients and recipe to corresponding textviews in RecipeActivity
         title.setText(users_title);

@@ -29,9 +29,9 @@ public class UploadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_upload);
     }
 
-    // Navigating from UploadActivity back to MainActivity
+    // Navigating from UploadActivity back to SearchActivity
     public void tomenuClicked(View view) {
-        Intent tomenu = new Intent(UploadActivity.this, MainActivity.class);
+        Intent tomenu = new Intent(UploadActivity.this, SearchActivity.class);
         startActivity(tomenu);
     }
 

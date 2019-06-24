@@ -18,9 +18,9 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
     }
 
-    // Navigating from SearchActivity to MainActivity
+    // Navigating from SearchActivity to SearchActivity
     public void backtomenuClicked(View view) {
-        Intent menu = new Intent(SearchActivity.this, MainActivity.class);
+        Intent menu = new Intent(SearchActivity.this, SearchActivity.class);
         startActivity(menu);
     }
 

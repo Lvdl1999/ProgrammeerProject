@@ -32,13 +32,9 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
     }
     public void getUsersRecipe(Callback callback, String id){
         this.callback = callback;
-        String url;
-        if((id == "")|| (id == null)){
-            url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
-        }
-        else{
-            url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?ingredients=" +id;
-        }
+        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
+        //String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?ingredients=" +id;
+
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
         queue.add(jsonArrayRequest);
@@ -52,7 +48,9 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
 
         try {
             JSONObject jsonObject;
-
+            if (response.length() == 0){
+                callback.gotUsersRecipeError("Couldn't find this ingredient in the user DataBase");
+            }
             for (int i = 0; i < response.length(); i++){
                 jsonObject = response.getJSONObject(i);
                 String title = jsonObject.getString("title");

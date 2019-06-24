@@ -11,7 +11,7 @@
         android:layout_width="247dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="452dp"
         android:layout_marginEnd="8dp"
         android:text="Please make sure to seperate your ingredients by commas."
         android:textColor="@android:color/holo_red_dark"
@@ -38,11 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="252dp"
-        android:onClick="recipesearchClicked"
+        android:layout_marginBottom="164dp"
         android:background="@drawable/btn_rounded"
-        android:text="Search"
         android:drawableLeft="@android:drawable/ic_menu_search"
+        android:onClick="recipesearchClicked"
+        android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -51,10 +51,20 @@
         android:layout_width="264dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginBottom="168dp"
         android:ems="10"
         android:hint="Search by ingredients or name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="324dp"
+        android:layout_height="334dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/okelogo" />
 </android.support.constraint.ConstraintLayout>

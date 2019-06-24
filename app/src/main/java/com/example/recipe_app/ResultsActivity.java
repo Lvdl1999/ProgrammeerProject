@@ -40,28 +40,32 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
             Button previous = (Button) findViewById(R.id.button3);
             previous.setVisibility(View.GONE);
         }
+        else{
+            APISearchRequest RecipeRequest = new APISearchRequest(this);
+            RecipeRequest.getAPIRecipes(this, search_word, page);
+        }
 
         // Given the results, the user can click on a recipe to get more details
         recipe_GridView = (GridView) findViewById(R.id.recipeGridView);
         recipe_GridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        // Get the GridView selected/clicked item text
-        SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
-        String recipeId = clickedrecipe.getId();
-        Boolean tag = clickedrecipe.getRecipetag();
+                // Get the GridView selected/clicked item text
+                SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
+                String recipeId = clickedrecipe.getId();
+                Boolean tag = clickedrecipe.getRecipetag();
 
-        // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
-        Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
+                // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
+                Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
 
-        Bundle extras = new Bundle();
-        extras.putBoolean("tag", tag);
-        extras.putString("recipe_id", recipeId);
+                Bundle extras = new Bundle();
+                extras.putBoolean("tag", tag);
+                extras.putString("recipe_id", recipeId);
 
-        intent.putExtras(extras);
-        startActivity(intent);
+                intent.putExtras(extras);
+                startActivity(intent);
             }
         });
     }
@@ -124,6 +128,10 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
             SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
             SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
                     searchRecipe.getImage(), searchRecipe.getRecipetag());
+
+
+
+
             arrayList.add(recipe);
         }
         // The search word and page are redirected to the APISearchRequest
