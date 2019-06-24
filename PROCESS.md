@@ -70,5 +70,13 @@ Also have worked on the next and previous button in the ResultsActivity but not 
 Update: thursday night. Both requests work and data is received by RecipeActivity. Difficulty was the difference in format from the user recipes and api recipes. Almost done only the ingredients have to me passed correctly to the RecipeActivity.
 I've reached my maximum of API calls, which is a total of 50. So tomorrow i'm gonna work on the next and previous button, invisibility at some point for some buttons, filtering user recipes with searchrequest.
 
+### Day 13
+
+previous en next doen het
+Beide soorten recepten kan ej op klikken en krijg je bijbehorend recept
+Nog niet filteren op userdatabase 
+
+View recipe online knop is onzichtbaar bij user recipe
+Daarvoor in de plaats krijg je bij user recipe juist het recept gewoon al te zien in textview
 
 
