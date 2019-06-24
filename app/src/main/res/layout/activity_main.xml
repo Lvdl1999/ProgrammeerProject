@@ -47,7 +47,7 @@
         android:layout_width="342dp"
         android:layout_height="456dp"
         android:layout_marginStart="36dp"
-        android:background="@drawable/fridgeLogo"
+        android:background="@drawable/fridgelogo"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="30sp"

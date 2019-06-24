@@ -32,17 +32,14 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
         // Performing an API request for the next 30 results
         // The 'previous' button will be invisible incase the app is at page 0
-//        page = (int) intent.getIntExtra("page", 0);
-//        if(page == 0) {
-//            UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
-//            userRecipeRequest.getUsersRecipe(this, search_word);
-//            Button previous = (Button) findViewById(R.id.button3);
-//            previous.setVisibility(View.GONE);
-//        }
-
-        // Performing an UsersRecipeRequest
-        UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
-        userRecipeRequest.getUsersRecipe(this);
+        page = (int) intent.getIntExtra("page", 0);
+        if(page == 0) {
+            // Performing an UsersRecipeRequest only on page 0
+            UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
+            userRecipeRequest.getUsersRecipe(this, search_word);
+            Button previous = (Button) findViewById(R.id.button3);
+            previous.setVisibility(View.GONE);
+        }
 
         // Given the results, the user can click on a recipe to get more details
         recipe_GridView = (GridView) findViewById(R.id.recipeGridView);

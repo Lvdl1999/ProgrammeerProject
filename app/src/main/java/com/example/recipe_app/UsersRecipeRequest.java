@@ -30,10 +30,15 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
     UsersRecipeRequest(Context context){
         this.context = context;
     }
-    public void getUsersRecipe(Callback callback){
+    public void getUsersRecipe(Callback callback, String id){
         this.callback = callback;
-
-        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
+        String url;
+        if((id == "")|| (id == null)){
+            url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
+        }
+        else{
+            url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?ingredients=" +id;
+        }
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
         queue.add(jsonArrayRequest);
