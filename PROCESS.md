@@ -79,4 +79,4 @@ Nog niet filteren op userdatabase
 View recipe online knop is onzichtbaar bij user recipe
 Daarvoor in de plaats krijg je bij user recipe juist het recept gewoon al te zien in textview
 
-
+I decided to get rid of the MainActivity because it's only useful to have a startscreen with options on a game app. On my app it's most important to use the search option and next to that the option to upload your own recipes. So the mainactivity is not as usefull and can be deleted. Instead of the mainscreen, the searchactivity will be the first screen and the user will directly be able to search or upload their own recipe. 
