@@ -13,6 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="buttonbackClicked"
+        android:fontFamily="@font/actor"
         android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,6 +25,7 @@
         android:layout_marginTop="608dp"
         android:layout_marginEnd="4dp"
         android:onClick="addfavoritesClicked"
+        android:fontFamily="@font/actor"
         android:text="Add to favorites!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
+        android:fontFamily="@font/actor"
         android:layout_marginBottom="52dp"
         android:onClick="showgroceryClicked"
         android:text="Show grocerylist"
@@ -59,6 +62,7 @@
         android:layout_marginStart="196dp"
         android:layout_marginTop="84dp"
         android:hint="Title"
+        android:fontFamily="@font/actor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,6 +74,7 @@
         android:layout_marginBottom="152dp"
         android:onClick="browseRecipe"
         android:text="View recipe online"
+        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -80,6 +85,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:text="Back to menu"
+        android:fontFamily="@font/actor"
         android:onClick="gobackToMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -90,6 +96,7 @@
         android:layout_height="108dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="404dp"
+        android:fontFamily="@font/actor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,6 +106,7 @@
         android:layout_height="159dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="232dp"
+        android:fontFamily="@font/actor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -15,6 +15,7 @@
         android:layout_marginBottom="24dp"
         android:onClick="backClicked"
         android:text="Back"
+        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -26,6 +27,7 @@
         android:layout_marginBottom="24dp"
         android:onClick="nextClicked"
         android:text="Next page"
+        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -34,6 +36,7 @@
         android:layout_height="488dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
+        android:fontFamily="@font/actor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -42,6 +45,7 @@
             android:id="@+id/recipeGridView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/actor"
             android:numColumns="3" />
     </LinearLayout>
 
@@ -53,6 +57,7 @@
         android:layout_marginBottom="80dp"
         android:text="Previous"
         android:onClick="previousClicked"
+        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -65,6 +70,7 @@
         android:clickable="true"
         android:onClick="uploadClicked"
         android:tint="@android:color/white"
+        android:fontFamily="@font/actor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@color/darkGreen"

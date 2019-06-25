@@ -1,6 +1,7 @@
 package com.example.recipe_app;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +19,10 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
     }
 
-    // Navigating from SearchActivity to SearchActivity
-    public void backtomenuClicked(View view) {
-        Intent menu = new Intent(SearchActivity.this, SearchActivity.class);
-        startActivity(menu);
+    // Navigating from SearchActivity to UploadActivity
+    public void toUploadClicked(View view) {
+        Intent upload = new Intent(SearchActivity.this, UploadActivity.class);
+        startActivity(upload);
     }
 
     // Navigating from SearchActivity to ResultsActivity
@@ -36,6 +37,11 @@ public class SearchActivity extends AppCompatActivity {
         results.putExtra("search_word", search_word);
         startActivity(results);
 
+    }
+
+    public void instagramClicked(View view) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/urfridgeapp/"));
+        startActivity(browserIntent);
     }
 }
 

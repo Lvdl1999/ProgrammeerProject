@@ -6,41 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="247dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="452dp"
-        android:layout_marginEnd="8dp"
-        android:text="Please make sure to seperate your ingredients by commas."
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/backtomenu"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
+        android:id="@+id/upload"
+        android:layout_width="55dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="28dp"
         android:layout_marginBottom="16dp"
-        android:text="Back to menu"
-        android:onClick="backtomenuClicked"
+        android:background="@drawable/uploadbutton"
+        android:fontFamily="@font/actor"
+        android:onClick="toUploadClicked"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="164dp"
+        android:layout_width="99dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="116dp"
         android:background="@drawable/btn_rounded"
         android:drawableLeft="@android:drawable/ic_menu_search"
+        android:fontFamily="@font/actor"
         android:onClick="recipesearchClicked"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,23 +34,34 @@
 
     <EditText
         android:id="@+id/search_bar"
-        android:layout_width="264dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="168dp"
+        android:layout_width="326dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="176dp"
         android:ems="10"
-        android:hint="Search by ingredients or name"
+        android:fontFamily="@font/actor"
+        android:hint="Search here (tomato, chicken, ...)"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="324dp"
-        android:layout_height="334dp"
+        android:layout_width="322dp"
+        android:layout_height="392dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/okelogo" />
+        app:srcCompat="@drawable/deflogo1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="instagramClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/instalogo" />
 </android.support.constraint.ConstraintLayout>
