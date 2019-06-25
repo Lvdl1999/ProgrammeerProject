@@ -35,7 +35,7 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
     public void getAPIRecipes(Callback callback, String searchword, int page){
         // Searchword is a variable to use the given searchword by the user
         // Page is used as a variable to get the next or previous 30 results
-        String url =  "https://www.food2fork.com/api/search?key=d568815d7a20340e63187b34e2cc6d89&q="+searchword+"&page="+page;
+        String url =  "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3&q="+searchword+"&page="+page;
         this.callback = callback;
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
@@ -59,13 +59,12 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
                 String id = jsonObject.getString("recipe_id");
                 String image = jsonObject.getString("image_url");
 
-                // An API recipe goes with the tag 'isAPI' being true to underestimate
+                // An API recipe gets the tag 'isAPI' being true to underestimate from API recipes
                 Boolean recipe_tag = isAPI;
 
                 SearchRecipe recipe = new SearchRecipe(title, id, image, recipe_tag);
                 arrayList.add(recipe);
             }
-
             callback.gotRecipe(arrayList);
         }
         catch (JSONException e) {
@@ -78,5 +77,4 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
     public void onErrorResponse(VolleyError error) {
         callback.gotRecipeError(error.getMessage());
     }
-
 }

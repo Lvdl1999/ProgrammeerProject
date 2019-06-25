@@ -33,6 +33,4 @@ public class GetRecipe implements Serializable{
     public ArrayList getIngredients(){
         return ingredients;
     }
-
-
 }

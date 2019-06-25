@@ -65,7 +65,6 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
                     ingredients_array.add(recipe_seperate[j]);
                 }
 
-
                 String user_image = "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg";
                 GetRecipe user_recipe = new GetRecipe(title, id, user_image, recipe, ingredients_array);
                 callback.gotUsersRec(user_recipe);

@@ -29,6 +29,4 @@ public class SearchRecipe implements Serializable {
     public Boolean getRecipetag() {
         return recipetag;
     }
-
-
 }

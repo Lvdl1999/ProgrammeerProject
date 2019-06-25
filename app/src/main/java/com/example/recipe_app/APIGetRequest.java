@@ -36,7 +36,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     public void getRecipes(APIGetRequest.Callback callback, String id){
 
         this.callback = callback;
-        String url = "https://www.food2fork.com/api/get?key=d568815d7a20340e63187b34e2cc6d89&rId="+id;
+        String url = "https://www.food2fork.com/api/get?key=8413a4deaec24af1f8da381c9f6719a3&rId="+id;
 
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
@@ -46,8 +46,6 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     // This method is called when the request goes as expected
     @Override
     public void onResponse(JSONObject response) {
-
-        System.out.println("get request gelukt");
 
         try {
             JSONObject jsonObject = response.getJSONObject("recipe");
@@ -66,10 +64,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             }
 
             GetRecipe get_recipe = new GetRecipe(title, id, image, source, ingredients_list);
-
             callback.gotRecipe(get_recipe);
-
-            System.out.println("get request info is binnen");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -81,5 +76,4 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     public void onErrorResponse(VolleyError error) {
         callback.gotRecipeError(error.getMessage());
     }
-
 }

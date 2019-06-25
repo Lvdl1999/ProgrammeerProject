@@ -60,8 +60,12 @@ public class ResultsAdapter extends ArrayAdapter {
         });
 
         // Set recipes image to corresponding imageview
-        Picasso pic = builder.build();
-        pic.load(currentString).into(image);
+        // Only set the recipe url if it's an API recipe because they receive a corresponding image
+        // User recipes get a standard image to be able to distinguish them
+        if (currentrecipe.getRecipetag()) {
+            Picasso pic = builder.build();
+            pic.load(currentString).into(image);
+        }
 
         return convertView;
     }

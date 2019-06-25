@@ -20,6 +20,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     private String recipe_id;
     private String source_url;
     private Boolean tag;
+    private String currentString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,10 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         Intent intent = getIntent();
         recipe_id = (String) intent.getSerializableExtra("recipe_id");
         tag = (Boolean) intent.getSerializableExtra("tag");
-        System.out.println("BOOLEAN IS BINNEN MET INTENT" + tag);
+
+        // Set bigger image and closing button invisible
+        findViewById(R.id.image_big).setVisibility(View.INVISIBLE);
+        findViewById(R.id.closebutton).setVisibility(View.INVISIBLE);
 
         // Depending on the kind of recipe the user clicked, there will be a different request
         // It's an API recipe if the tag boolean is 'true'
@@ -50,29 +54,28 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         }
     }
 
-    // Navigating from RecipeActivity to SearchActivity
-    public void buttonbackClicked(View view) {
-        Intent menu = new Intent(RecipeActivity.this, SearchActivity.class);
-        startActivity(menu);
+    // This method makes it possible to look closer at the recipes image
+    public void bigImageClicked(View view) {
+        // Set bigger image and closing button invisible
+        findViewById(R.id.image_big).setVisibility(View.VISIBLE);
+        findViewById(R.id.closebutton).setVisibility(View.VISIBLE);
+
+        // Setting image_url to corresponding image view
+        ImageView recipe_image = findViewById(R.id.image_big);
+        Picasso.with(this).load(this.currentString).into(recipe_image);
+    }
+
+    // By clicking this button the big image can be closed again to go back to it's original size
+    public void closeImageClicked(View view) {
+        // Set bigger image and closing button back to invisible
+        findViewById(R.id.image_big).setVisibility(View.INVISIBLE);
+        findViewById(R.id.closebutton).setVisibility(View.INVISIBLE);
     }
 
     // Navigating from RecipeActivity to MainActivity
     public void gobackToMenu(View view) {
         Intent menu = new Intent(RecipeActivity.this, SearchActivity.class);
         startActivity(menu);
-    }
-
-    // TODO Adding current recipe to favorites
-    public void addfavoritesClicked(View view) {
-        // When the user looks at a recipe it's possible to add to favorites through this method.
-        // The user has to click this button and the recipe will be added to their favorites list.
-        // Which is also a listview in FavoritesActivity.
-    }
-
-    // Navigating from RecipeActivity to GroceryActivity
-    public void showgroceryClicked(View view) {
-        Intent grocery = new Intent(RecipeActivity.this, GroceryActivity.class);
-        startActivity(grocery);
     }
 
     // Clicking this button will redirect to the source url of the recipe
@@ -98,18 +101,18 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
         // Set title and ingredients to textviews in RecipeActivity
         title.setText(recipeName);
-        //Set adapter
+
+        //Set recipe adapter to load recipe into textview
         RecipeAdapter adapter = new RecipeAdapter(RecipeActivity.this, R.layout.ingredients_adapter, ingredients_text);
         ingredients.setAdapter(adapter);
-//        TODO ingredients uit lijst in textview zien te krijgen
 
         // Before the url can be set to the image, it is updated from a 'http' to a 'https' link
-        String currentString = image_url;
-        String[] seperated = currentString.split(":");
-        currentString = seperated[0] + "s:" + seperated[1];
+        this.currentString = image_url;
+        String[] seperated = this.currentString.split(":");
+        this.currentString = seperated[0] + "s:" + seperated[1];
 
         // Setting image_url to corresponding image view
-        Picasso.with(this).load(currentString).into(recipe_image);
+        Picasso.with(this).load(this.currentString).into(recipe_image);
     }
 
     // This method is called when something about the request goes wrong
@@ -133,21 +136,12 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         String image_url = userRecipe.getImage();
         ArrayList ingredients_text = userRecipe.getIngredients();
 
-
         RecipeAdapter adapter = new RecipeAdapter(RecipeActivity.this, R.layout.ingredients_adapter, ingredients_text);
         ingredients.setAdapter(adapter);
 
         // Set title, ingredients and recipe to corresponding textviews in RecipeActivity
         title.setText(users_title);
         recipe.setText(recipe_text);
-
-        // Before the url can be set to the image, it is updated from a 'http' to 'https' link
-        String currentString = image_url;
-        String[] seperated = currentString.split(":");
-        currentString = seperated[0] + "s:" + seperated[1];
-
-        // Setting image_url to image view
-        Picasso.with(this).load(currentString).into(image_recipe);
     }
 
     // This method is called when something about the request goes wrong

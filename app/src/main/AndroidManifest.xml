@@ -10,11 +10,9 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GroceryActivity"></activity>
         <activity android:name=".RecipeActivity" />
         <activity android:name=".ResultsActivity" />
         <activity android:name=".UploadActivity" />
-        <activity android:name=".FavoritesActivity" />
         <activity android:name=".SearchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

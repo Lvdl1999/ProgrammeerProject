@@ -55,6 +55,9 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
                 // Get the GridView selected/clicked item text
                 SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
                 String recipeId = clickedrecipe.getId();
+//                TODO user recipes filteren op id ipv naam eigenlijk
+//                String username = clickedrecipe.getName();
+//                System.out.println("username:" + username);
                 Boolean tag = clickedrecipe.getRecipetag();
 
                 // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
@@ -88,7 +91,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
 
     // This method is called when the user presses the 'next' button
     public void nextClicked(View view) {
-//        TODO next 30 results
         // The resultsActivity will show the next 30 results of the API recipes
         page ++;
         Intent results = new Intent(ResultsActivity.this, ResultsActivity.class);
@@ -134,10 +136,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
             SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
             SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
                     searchRecipe.getImage(), searchRecipe.getRecipetag());
-
-
-
-
             arrayList.add(recipe);
         }
         // The search word and page are redirected to the APISearchRequest

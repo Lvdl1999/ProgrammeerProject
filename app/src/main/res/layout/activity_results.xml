@@ -51,13 +51,13 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="99dp"
+        android:layout_width="93dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="80dp"
-        android:text="Previous"
-        android:onClick="previousClicked"
         android:fontFamily="@font/actor"
+        android:onClick="previousClicked"
+        android:text="Previous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

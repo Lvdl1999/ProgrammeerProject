@@ -35,7 +35,7 @@ public class UploadActivity extends AppCompatActivity {
         startActivity(tomenu);
     }
 
-    // This method is called when the user wants to upload the recipe
+    // This method is called when the user clicks to upload the recipe
     public void uploadrecipeClicked(View view) {
 
         // Saving all Edittexts and getting uploaded title, name, email, recipe and ingredients
@@ -66,8 +66,16 @@ public class UploadActivity extends AppCompatActivity {
         else if((user_ingredients.equals("") || user_ingredients == null)){
             Toast.makeText(this, "Fill in a Title", Toast.LENGTH_LONG).show();
         }
+        // All fields are filled so the recipe will be uploaded to the users database
         else{
             uploadRecipe(user_title, user_email, user_name, user_recipe, user_ingredients);
+
+            // After uploading, all the edittexts are empty so the user could eventually add more
+            title.setText("");
+            email.setText("");
+            name.setText("");
+            ingredients.setText("");
+            recipe.setText("");
         }
     }
 
@@ -75,7 +83,6 @@ public class UploadActivity extends AppCompatActivity {
     private void uploadRecipe(final String title, final String email, final String name,
                               final String recipe, final String ingredients){
 
-        //      TODO Standaard plaatje voor users recipes
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
         new Response.Listener<String>() {

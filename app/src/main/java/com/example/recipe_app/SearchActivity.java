@@ -36,7 +36,6 @@ public class SearchActivity extends AppCompatActivity {
         // The users searchword is put in the intent to perform a GetRequest in the ResultsActivity
         results.putExtra("search_word", search_word);
         startActivity(results);
-
     }
 
     public void instagramClicked(View view) {

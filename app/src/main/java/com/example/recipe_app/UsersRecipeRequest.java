@@ -49,6 +49,8 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
 
         try {
             JSONObject jsonObject;
+
+            // In case the API request didn't find any recipe with the users searchword
             if (response.length() == 0){
                 callback.gotUsersRecipeError("Couldn't find this ingredient in the user DataBase");
             }
@@ -61,27 +63,28 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
                 // An users recipe goes with the tag 'isAPI' being false to underestimate
                 Boolean recipetag = false;
 
-                //String image = jsonObject.getString("image_url");
+                //String image = null;
                 SearchRecipe recipe = new SearchRecipe(title, id, "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg", recipetag);
 
+                // Performing the searchwords filter method locally for the userrecipes
+                // The rester database unfortunateley doesn't come with this option for online search
+                // The keywords are seperated by commas and compared to ingredients from the database
                 String[] keyword_seperate = keyword.split(",");
                 boolean contain = false;
                 for(int j = 0; j <keyword_seperate.length; j++) {
                     if (ingredients.contains(keyword_seperate[j])) {
                         contain = true;
-                        System.out.println("does contain the word");
                     }
                     else {
                         contain = false;
-                        System.out.println("doesnt contain the word");
                         break;
                     }
                 }
+                // If the searchword matches a recipes ingredient it will be shown in the results
                 if(contain) {
                     arrayList.add(recipe);
                 }
             }
-
             callback.gotUsersRecipe(arrayList);
         }
         catch (JSONException e) {
