@@ -107,12 +107,12 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
         ingredients.setAdapter(adapter);
 
         // Before the url can be set to the image, it is updated from a 'http' to a 'https' link
-        this.currentString = image_url;
-        String[] seperated = this.currentString.split(":");
-        this.currentString = seperated[0] + "s:" + seperated[1];
+        currentString = image_url;
+        String[] seperated = currentString.split(":");
+        currentString = seperated[0] + "s:" + seperated[1];
 
         // Setting image_url to corresponding image view
-        Picasso.with(this).load(this.currentString).into(recipe_image);
+        Picasso.with(this).load(currentString).into(recipe_image);
     }
 
     // This method is called when something about the request goes wrong
@@ -126,20 +126,18 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
     public void gotUsersRec(GetRecipe userRecipe) {
 
         // Saving textviews and imageview that will be used to show a recipe
-        ImageView image_recipe = findViewById(R.id.image_recipe);
         ListView ingredients = findViewById(R.id.ingredients_text);
         TextView title = findViewById(R.id.title);
         TextView recipe = findViewById(R.id.recipe_text);
 
         String users_title = userRecipe.getName();
         String recipe_text = userRecipe.getSource();
-        String image_url = userRecipe.getImage();
         ArrayList ingredients_text = userRecipe.getIngredients();
 
+        // Set title, ingredients(adapter) and recipe to corresponding textviews in RecipeActivity
         RecipeAdapter adapter = new RecipeAdapter(RecipeActivity.this, R.layout.ingredients_adapter, ingredients_text);
         ingredients.setAdapter(adapter);
 
-        // Set title, ingredients and recipe to corresponding textviews in RecipeActivity
         title.setText(users_title);
         recipe.setText(recipe_text);
     }

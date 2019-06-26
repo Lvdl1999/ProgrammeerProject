@@ -63,8 +63,8 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
                 // An users recipe goes with the tag 'isAPI' being false to underestimate
                 Boolean recipetag = false;
 
-                //String image = null;
-                SearchRecipe recipe = new SearchRecipe(title, id, "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg", recipetag);
+                String image = "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg";
+                SearchRecipe recipe = new SearchRecipe(title, id, image, recipetag);
 
                 // Performing the searchwords filter method locally for the userrecipes
                 // The rester database unfortunateley doesn't come with this option for online search

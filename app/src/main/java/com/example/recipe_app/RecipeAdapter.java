@@ -20,14 +20,15 @@ public class RecipeAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        // A new view must be inflated if it doesn't exist already
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.ingredients_adapter, parent, false);
         }
+        // Setting ingredients to ingredients adapter
         String ingredient = ingredients_list.get(position);
         TextView ingredient_text = convertView.findViewById(R.id.ingredients_textview);
         ingredient_text.setText(ingredient);
 
         return convertView;
     }
-
 }

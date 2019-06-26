@@ -10,8 +10,8 @@
         android:id="@+id/textView"
         android:layout_width="172dp"
         android:layout_height="55dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="396dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginBottom="332dp"
         android:text="Please make sure to seperate your ingredients by commas."
         android:textColor="@android:color/holo_red_dark"
         android:textSize="14sp"
@@ -25,7 +25,7 @@
         android:layout_height="228dp"
         android:layout_marginStart="208dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/txtview_border"
         android:ems="10"
         android:fontFamily="@font/actor"
@@ -33,7 +33,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -54,7 +54,7 @@
         android:layout_height="61dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/btn_rounded"
         android:drawableRight="@android:drawable/ic_menu_add"
         android:fontFamily="@font/actor"
@@ -63,14 +63,15 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.678"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/ingredients"
         android:layout_width="172dp"
         android:layout_height="228dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/txtview_border"
         android:ems="10"
         android:fontFamily="@font/actor"
@@ -83,15 +84,13 @@
         android:id="@+id/name"
         android:layout_width="138dp"
         android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/txtview_border"
         android:ems="10"
         android:fontFamily="@font/actor"
         android:hint=" First name:"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,32 +98,28 @@
         android:id="@+id/email"
         android:layout_width="138dp"
         android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
         android:background="@drawable/txtview_border"
         android:ems="10"
         android:fontFamily="@font/actor"
         android:hint=" Email:"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/title"
         android:layout_width="139dp"
         android:layout_height="41dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="184dp"
         android:background="@drawable/txtview_border"
         android:ems="10"
         android:fontFamily="@font/actor"
         android:hint=" Title recipe:"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

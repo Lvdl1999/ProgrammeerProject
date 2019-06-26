@@ -19,12 +19,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
     }
 
-    // Navigating from SearchActivity to UploadActivity
-    public void toUploadClicked(View view) {
-        Intent upload = new Intent(SearchActivity.this, UploadActivity.class);
-        startActivity(upload);
-    }
-
     // Navigating from SearchActivity to ResultsActivity
     public void recipesearchClicked(View view) {
 
@@ -38,9 +32,16 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(results);
     }
 
+    // Redirecting from the app to the instagram page
     public void instagramClicked(View view) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/urfridgeapp/"));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/yourfridge_app/"));
         startActivity(browserIntent);
+    }
+
+    // Navigating from SearchActivity to UploadActivity
+    public void toUploadClicked(View view) {
+        Intent upload = new Intent(SearchActivity.this, UploadActivity.class);
+        startActivity(upload);
     }
 }
 

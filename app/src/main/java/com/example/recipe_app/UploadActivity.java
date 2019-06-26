@@ -105,7 +105,7 @@ public class UploadActivity extends AppCompatActivity {
                 return MyRecipes;
             }
         };
-        // Performing the database request to add a user recipe
+        // Performing the database request to add an user recipe
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(stringRequest);
 

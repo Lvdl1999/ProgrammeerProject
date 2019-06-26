@@ -19,7 +19,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     private int page;
     private GridView recipe_GridView;
     private ArrayList arrayList = new ArrayList();
-    private Boolean tag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +29,8 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Intent intent = getIntent();
         search_word = (String) intent.getStringExtra("search_word");
 
-        // Performing an API request for the next 30 results
-        // The 'previous' button will be invisible incase the app is at page 0
+        // Performing an API request for the next 30 results because it gives 30 per request
+        // The 'previous' button will be invisible in case the app is at page 0
         page = (int) intent.getIntExtra("page", 0);
         if(page == 0) {
             // Performing an UsersRecipeRequest only on page 0
@@ -126,7 +125,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-
     // This method is called when the request goes as expected
     @Override
     public void gotUsersRecipe (ArrayList<SearchRecipe> GetRecipe) {
@@ -142,7 +140,6 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         // Performing an APISearchRequest
         APISearchRequest RecipeRequest = new APISearchRequest(this);
         RecipeRequest.getAPIRecipes(this, search_word, page);
-
     }
 
     // This method is called when something about the request goes wrong
