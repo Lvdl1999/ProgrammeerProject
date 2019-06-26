@@ -40,9 +40,9 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
 
     // This method attempts to retrieve categories from the API
     public void getAPIRecipes(Callback callback, String searchword, int page){
-        // Searchword is a variable to use the given searchword by the user
+        // Searchword is a variable to use the given search word by the user
         // Page is used as a variable to get the next or previous 30 results
-        String url =  "https://www.food2fork.com/api/search?key=8413a4deaec24af1f8da381c9f6719a3&q="+searchword+"&page="+page;
+        String url =  "https://www.food2fork.com/api/search?key=e2923f01061e85612e462bb2883ed039&q="+searchword+"&page="+page;
         this.callback = callback;
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
@@ -56,6 +56,7 @@ public class APISearchRequest implements Response.Listener<JSONObject>, Response
         ArrayList arrayList = new ArrayList();
         JSONArray jsonArray;
 
+        // Getting back a response from the API and saving the data into Strings, Boolean and Array
         try {
             jsonArray = response.getJSONArray("recipes");
             JSONObject jsonObject;

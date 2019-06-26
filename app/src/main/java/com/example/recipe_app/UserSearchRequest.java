@@ -62,6 +62,8 @@ public class UserSearchRequest implements Response.Listener<JSONArray>, Response
             if (response.length() == 0){
                 callback.gotUsersRecipeError("Couldn't find this ingredient in the user DataBase");
             }
+
+            // Getting back a response from DB and saving the data into Strings, Boolean and Array
             for (int i = 0; i < response.length(); i++){
                 jsonObject = response.getJSONObject(i);
                 String title = jsonObject.getString("title");

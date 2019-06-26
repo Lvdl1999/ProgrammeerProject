@@ -43,7 +43,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     public void getRecipes(APIGetRequest.Callback callback, String id){
 
         this.callback = callback;
-        String url = "https://www.food2fork.com/api/get?key=8413a4deaec24af1f8da381c9f6719a3&rId="+id;
+        String url = "https://www.food2fork.com/api/get?key=e2923f01061e85612e462bb2883ed039&rId="+id;
 
         RequestQueue requestRecipe = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
@@ -54,6 +54,7 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
     @Override
     public void onResponse(JSONObject response) {
 
+        // Getting back a response from the API and saving the data into Strings and an Array
         try {
             JSONObject jsonObject = response.getJSONObject("recipe");
 
@@ -61,7 +62,6 @@ public class APIGetRequest implements Response.Listener<JSONObject>, Response.Er
             String id = jsonObject.getString("recipe_id");
             String image = jsonObject.getString("image_url");
             String source = jsonObject.getString("source_url");
-
 
             ArrayList ingredients_list = new ArrayList();
             JSONArray ingredients_json = jsonObject.getJSONArray("ingredients");

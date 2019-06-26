@@ -112,8 +112,9 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     @Override
     public void gotRecipe(ArrayList<SearchRecipe> recipe) {
 
-        for (int i2 = 0; i2 < recipe.size(); i2++) {
-            SearchRecipe searchRecipe2 = (SearchRecipe) recipe.get(i2);
+        // Getting all data from the corresponding recipe and putting in an ArrayList
+        for (int j = 0; j < recipe.size(); j++) {
+            SearchRecipe searchRecipe2 = (SearchRecipe) recipe.get(j);
             SearchRecipe recipe2 = new SearchRecipe(searchRecipe2.getName(), searchRecipe2.getId(),
                     searchRecipe2.getImage(), searchRecipe2.getRecipetag());
             arrayList.add(recipe2);
@@ -134,6 +135,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
     public void gotUsersRecipe (ArrayList<SearchRecipe> GetRecipe) {
         this.GetRecipe = GetRecipe;
 
+        // Getting all data from the corresponding recipe and putting in an ArrayList
         for (int i = 0; i < GetRecipe.size(); i++) {
             SearchRecipe searchRecipe = (SearchRecipe) GetRecipe.get(i);
             SearchRecipe recipe = new SearchRecipe(searchRecipe.getName(), searchRecipe.getId(),
