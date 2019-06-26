@@ -64,7 +64,7 @@ public class UploadActivity extends AppCompatActivity {
             Toast.makeText(this, "Fill in a Recipe", Toast.LENGTH_LONG).show();
         }
         else if((user_ingredients.equals("") || user_ingredients == null)){
-            Toast.makeText(this, "Fill in a Title", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Fill in ingredients", Toast.LENGTH_LONG).show();
         }
         // All fields are filled so the recipe will be uploaded to the users database
         else{

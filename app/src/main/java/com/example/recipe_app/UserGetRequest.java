@@ -6,6 +6,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.recipe_app.GetRecipe;
 import com.example.recipe_app.ResultsActivity;
@@ -17,7 +18,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class UserGetRequest implements Response.Listener<JSONArray>, Response.ErrorListener {
+public class UserGetRequest implements Response.Listener<JSONObject>, Response.ErrorListener {
 
 
     private Context context;
@@ -37,38 +38,35 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
     public void getUsersRecipe(UserGetRequest.Callback callback, String id){
         this.callback = callback;
         //TODO id fixen
-        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe";
+        System.out.println("zoek id: " + id);
+        String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe/"+id;
         //String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?id="+ id;
 
         RequestQueue queue = Volley.newRequestQueue(context);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, this, this);
-        queue.add(jsonArrayRequest);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);
+        queue.add(jsonObjectRequest);
     }
 
     // This method is called when the request goes as expected
     @Override
-    public void onResponse(JSONArray response) {
+    public void onResponse(JSONObject response) {
 
         try {
-            JSONObject jsonObject;
-
-            for (int i = 0; i < response.length(); i++){
-                jsonObject = response.getJSONObject(i);
-                String title = jsonObject.getString("title");
-                String id = jsonObject.getString("id");
-                String recipe = jsonObject.getString("recipe");
-                String ingredients = jsonObject.getString("ingredients");
+                String title = response.getString("title");
+                String id = response.getString("id");
+                String recipe = response.getString("recipe");
+                String ingredients = response.getString("ingredients");
 
                 String[] recipe_seperate = ingredients.split(",");
                 ArrayList<String> ingredients_array = new ArrayList<>();
-                for(int j =0; i< recipe_seperate.length; i++){
+                for(int j =0; j< recipe_seperate.length; j++){
                     ingredients_array.add(recipe_seperate[j]);
                 }
 
                 String user_image = "http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg";
                 GetRecipe user_recipe = new GetRecipe(title, id, user_image, recipe, ingredients_array);
                 callback.gotUsersRec(user_recipe);
-            }
+
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -79,5 +77,7 @@ public class UserGetRequest implements Response.Listener<JSONArray>, Response.Er
     @Override
     public void onErrorResponse(VolleyError error) {
         callback.gotUsersRecError(error.getMessage());
+
+        error.printStackTrace();
     }
 }
