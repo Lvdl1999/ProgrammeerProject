@@ -54,12 +54,12 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
                 // Get the GridView selected/clicked item text
                 SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
                 String recipeId = clickedrecipe.getId();
-//
                 Boolean tag = clickedrecipe.getRecipetag();
 
                 // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
                 Intent intent = new Intent(ResultsActivity.this, RecipeActivity.class);
 
+                // https://stackoverflow.com/questions/22918333/pass-multiple-variable-with-putextra
                 Bundle extras = new Bundle();
                 extras.putBoolean("tag", tag);
                 extras.putString("recipe_id", recipeId);

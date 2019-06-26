@@ -80,6 +80,7 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
 
     // Clicking this button will redirect to the source url of the recipe
     public void browseRecipe(View view) {
+        // I used this tutorial: https://www.youtube.com/watch?v=9-3OCc5g5oE
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(this.source_url));
         startActivity(browserIntent);
     }
