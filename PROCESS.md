@@ -102,6 +102,8 @@ Also the upload button changed, I felt like it didn't match the rest of the page
 After letting a friend using the app I noticed she would click on the image in RecipeActivity. This made me think about an option to get a closer view on it. So I created a method when the user clicks on the image, a bigger version of it will become visible in the activity, along with a closing button. This way the user can have a better look at the recipes image.
 Also she uploaded her own recipe, and when she pressed the button to upload, I noticed the edittexts don't clear automatically. I added this to the method so now the app handles this itself and the user is able to eventually add more recipes.
 
+From left to right, this is how the SearchActivity progressed and became the Mainscreen.
+
 <img width="450" alt="image" src="https://user-images.githubusercontent.com/47352487/60159130-cab12e80-97f2-11e9-9f6c-0eaf8230af46.png">
 
 Finally I cleaned my code again and added a few last comments to some new methods. 
