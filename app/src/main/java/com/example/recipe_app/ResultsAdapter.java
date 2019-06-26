@@ -48,7 +48,7 @@ public class ResultsAdapter extends ArrayAdapter {
         String recipe_name = currentrecipe.getName();
         String recipe_image = String.valueOf(currentrecipe.getImage());
 
-        // Set recipes name
+        // Set the recipes name
         title.setText(recipe_name);
 
         // Before the url can be set to the image, it is updated from a 'http' to 'https' link

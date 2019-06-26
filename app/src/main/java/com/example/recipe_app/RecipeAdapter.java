@@ -32,7 +32,7 @@ public class RecipeAdapter extends ArrayAdapter {
         if(convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.ingredients_adapter, parent, false);
         }
-        // Setting ingredients to ingredients adapter
+        // Setting ingredients to the ingredients adapter
         String ingredient = ingredients_list.get(position);
         TextView ingredient_text = convertView.findViewById(R.id.ingredients_textview);
         ingredient_text.setText(ingredient);

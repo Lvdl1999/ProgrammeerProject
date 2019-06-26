@@ -77,8 +77,8 @@ public class UserSearchRequest implements Response.Listener<JSONArray>, Response
                 SearchRecipe recipe = new SearchRecipe(title, id, image, recipetag);
 
                 // Performing the searchwords filter method locally for the userrecipes
-                // The rester database unfortunateley doesn't come with this option for online search
-                // The keywords are seperated by commas and compared to ingredients from the database
+                // The rester database unfortunately doesn't come with this option for online search
+                // The keywords are comma seperated and compared to ingredients from the database
                 String[] keyword_seperate = keyword.split(",");
                 boolean contain = false;
                 for(int j = 0; j <keyword_seperate.length; j++) {

@@ -50,7 +50,7 @@ public class UserGetRequest implements Response.Listener<JSONObject>, Response.E
     @Override
     public void onResponse(JSONObject response) {
 
-        // Getting back a response from the DB and saving the data into Strings and an Array
+        // Getting back a response from the DB and saving the data into Strings and an Arraylist
         try {
                 String title = response.getString("title");
                 String id = response.getString("id");

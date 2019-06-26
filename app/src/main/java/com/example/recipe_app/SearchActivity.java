@@ -41,7 +41,7 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(results);
     }
 
-    // Redirecting from the app to the instagram page
+    // Redirecting from the app to the Instagram page
     public void instagramClicked(View view) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/yourfridge_app/"));
         startActivity(browserIntent);

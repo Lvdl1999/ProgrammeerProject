@@ -76,7 +76,7 @@
     <ImageView
         android:id="@+id/image_big"
         android:layout_width="430dp"
-        android:layout_height="337dp"
+        android:layout_height="348dp"
         android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

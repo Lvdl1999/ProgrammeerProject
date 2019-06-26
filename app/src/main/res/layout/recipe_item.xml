@@ -22,10 +22,5 @@
         android:background="@color/recipe"
         android:fontFamily="@font/actor"
         app:srcCompat="@drawable/usericon" />
-    <!--<ImageView-->
-        <!--android:id="@+id/imageV"-->
-        <!--android:layout_width="41dp"-->
-        <!--android:layout_height="40dp"-->
-        <!--android:background="@drawable/user_icon" />-->
 
 </LinearLayout>

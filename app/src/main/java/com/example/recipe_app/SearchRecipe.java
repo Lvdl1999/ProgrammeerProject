@@ -21,7 +21,7 @@ public class SearchRecipe implements Serializable {
         this.recipetag = recipetag;
     }
 
-    // Getters for all fields
+    // Getters for all the fields
     public String getName(){
         return name;
     }

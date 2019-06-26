@@ -78,7 +78,7 @@ public class UploadActivity extends AppCompatActivity {
         else{
             uploadRecipe(user_title, user_email, user_name, user_recipe, user_ingredients);
 
-            // After uploading, all the edittexts are empty so the user could eventually add more
+            // After uploading, all the edit texts are empty so the user could eventually add more
             title.setText("");
             email.setText("");
             name.setText("");

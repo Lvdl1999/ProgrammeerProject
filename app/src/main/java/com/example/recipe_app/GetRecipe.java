@@ -25,7 +25,7 @@ public class GetRecipe implements Serializable{
         this.ingredients = ingredients;
     }
 
-    // Getters for all fields
+    // Getters for all the fields
     public String getName(){ return name; }
 
     public String getId() {
