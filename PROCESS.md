@@ -108,3 +108,6 @@ Code Review with Valerie:
 Changed button 'back' to 'back to search' because she expected to be redirected to resultsactivity.
 She liked the fact that I have a lot of short functions in my code because it's easy to overview.
 
+I also gave her some feedback. She had some comments which could have been a little bit more extensive to a reader like me.
+Her code was very decent, further she only had to delete a few souts for testing the code. 
+
