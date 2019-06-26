@@ -1,3 +1,11 @@
+/**
+ * UploadActivity
+ * In the UploadActivity uploads an userrecipe to the database after the user uploaded it.
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 
 import android.content.Intent;

@@ -1,3 +1,11 @@
+/**
+ * UserGetRequest
+ * This class handles the GetRequest which is performed for more details about a recipe
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 import android.content.Context;
 import android.telecom.Call;

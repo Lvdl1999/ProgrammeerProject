@@ -1,3 +1,11 @@
+/**
+ * ResultsAdapter
+ * The ResultsAdapter contains the name and image of the recipes showed in the ResultsActivity
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 
 import android.content.Context;

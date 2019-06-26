@@ -1,3 +1,10 @@
+/**
+ * ResultsActivity
+ * This activity does an API- and UserSearchRequest and shows all the corresponding results.
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
 package com.example.recipe_app;
 
 import android.content.Intent;

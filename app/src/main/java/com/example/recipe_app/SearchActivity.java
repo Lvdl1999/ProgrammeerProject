@@ -1,3 +1,12 @@
+/**
+ * SearchActivity
+ * This is the apps starting activity. The user can do the recipe search based on a searchword
+ * It also redirects the user to my apps Instagram page and to the UploadActivity
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 
 import android.content.Intent;

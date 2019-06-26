@@ -1,3 +1,11 @@
+/**
+ * RecipeAdapter
+ * The RecipeAdapter contains the ingredients of the recipe showed in the RecipeActivity
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 
 import android.content.Context;

@@ -1,3 +1,11 @@
+/**
+ * SearchRecipe
+ * The SearchRecipe model class for all fields of a (search)userrecipe
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 
 import java.io.Serializable;

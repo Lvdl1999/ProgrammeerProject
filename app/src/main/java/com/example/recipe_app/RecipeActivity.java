@@ -1,3 +1,10 @@
+/**
+ * RecipeActivity
+ * This activity shows the details of a recipe that the user has clicked on by doing a GetRequest
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
 package com.example.recipe_app;
 
 import android.content.Intent;

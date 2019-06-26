@@ -1,3 +1,10 @@
+/**
+ * APISearchRequest
+ * This class handles the SearchRequest which filters the database on the users given searchword
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
 package com.example.recipe_app;
 
 import android.content.Context;

@@ -1,3 +1,11 @@
+/**
+ *
+ *
+ * Created by Levy van der Linde (june 2019)
+ * Minor Programmeren
+ */
+
+
 package com.example.recipe_app;
 
 import android.content.Context;
