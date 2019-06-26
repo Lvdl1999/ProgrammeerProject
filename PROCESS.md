@@ -104,3 +104,7 @@ I changed the standard image which comes with user recipes. The new icon matches
 
 Also took care of landscape variation. 
 
+Code Review with Valerie:
+Changed button 'back' to 'back to search' because she expected to be redirected to resultsactivity.
+She liked the fact that I have a lot of short functions in my code because it's easy to overview.
+
