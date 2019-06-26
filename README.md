@@ -20,7 +20,7 @@ Searching with 'chicken' gives the following results
 
 #### *Have a look at a recipes details*
 Go to a recipe details and have a closer view
-<img width="1195" alt="image" src="https://user-images.githubusercontent.com/47352487/60188850-3fef2480-9830-11e9-914b-56d62ecd8ac0.png">
+<img width="1186" alt="image" src="https://user-images.githubusercontent.com/47352487/60189863-eee03000-9831-11e9-8a23-0a4b2eafc24b.png">
 
 ### External sources
 
