@@ -5,16 +5,11 @@
 
 *What’s in your fridge?*
 
-YOURFRIDGE APP
+[YOURFRIDGE APP](https://www.instagram.com/yourfridge_app/)
 
-https://www.instagram.com/yourfridge_app/
-
-
-### Screenshots
 
 #### *Opening screen*
 From this screen its possible to go to 'upload a recipe' (right).
-
 But also to view this apps Instagram page (left).
 
 <img width="1200" alt="image" src="https://user-images.githubusercontent.com/47352487/60188495-ade71c00-982f-11e9-92d8-6b55aed59b9d.png">
@@ -23,6 +18,7 @@ But also to view this apps Instagram page (left).
 Searching with 'chicken' gives the following results
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/47352487/60188560-cbb48100-982f-11e9-9332-e8f4b9c453c8.png">
 
+#### *Have a look at a recipes details*
 Go to a recipe details and have a closer view
 <img width="1195" alt="image" src="https://user-images.githubusercontent.com/47352487/60188850-3fef2480-9830-11e9-914b-56d62ecd8ac0.png">
 
