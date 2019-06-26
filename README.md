@@ -16,10 +16,12 @@ But also to view this apps Instagram page (left).
 
 #### *Search option with following results*
 Searching with 'chicken' gives the following results
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/47352487/60188560-cbb48100-982f-11e9-9332-e8f4b9c453c8.png">
 
 #### *Have a look at a recipes details*
 Go to a recipe details and have a closer view
+
 <img width="1186" alt="image" src="https://user-images.githubusercontent.com/47352487/60189863-eee03000-9831-11e9-8a23-0a4b2eafc24b.png">
 
 ### External sources
