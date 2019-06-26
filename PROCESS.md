@@ -72,7 +72,7 @@ I've reached my maximum of API calls, which is a total of 50. So tomorrow i'm go
 The API recipes get a source url which redirects them to the online page with the total recipe. I created a button to redirect the user and this button will be available when a user has clicked on a user recipe. This is because there is no source url included with those.
 
 ### Day 13
-I decided to get rid of the MainActivity because it's only useful to have a startscreen with options on a game app. On my app it's most important to use the search option and next to that the option to upload your own recipes. So the mainactivity is not as usefull and can be deleted. Instead of the mainscreen, the searchactivity will be the first screen and the user will directly be able to search or upload their own recipe. 
+I decided to get rid of the MainActivity because it's only useful to have a startscreen with options on a game app. On my app it's most important to use the search option and next to that the option to upload your own recipes. So the mainactivity is not as usefull and can be deleted. Instead of the mainscreen, the searchactivity will be the first screen and the user will directly be able to search or upload their own recipe. (https://www.youtube.com/watch?v=QANjXp1AVrY)
 
 The next en previous buttons in the ResultsActivity both work. Also the previous button only shows up after the user gets on page 1 so it can go back to page 0. On page 0 there is no previous button needed.
 Also I created a recipetag to distinguish API recipes from user recipes. The API recipes have a "isAPI' tag which is true and recipes false. Depending on what the user clicks on, the app knows which request has to be performed.
