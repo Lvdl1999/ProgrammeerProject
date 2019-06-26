@@ -82,6 +82,9 @@ The MainActivity redirected to a SearchActivity:
 
 <img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/60190555-1f749980-9833-11e9-8863-ac760051a38a.png">
 
+Also this was the UploadActivity before I updated the UI:
+
+<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/60191415-93637180-9834-11e9-88dd-07ca8b7feefd.png">
 
 The next en previous buttons in the ResultsActivity both work. Also the previous button only shows up after the user gets on page 1 so it can go back to page 0. On page 0 there is no previous button needed.
 Also I created a recipetag to distinguish API recipes from user recipes. The API recipes have a "isAPI' tag which is true and recipes false. Depending on what the user clicks on, the app knows which request has to be performed.
@@ -111,7 +114,11 @@ Finally I cleaned my code again and added a few last comments to some new method
 ### Day 15 
 Today I worked on the process book. I made a lot of process and noted everything but didn't have time to actually write about it. 
 
+This is what the ResultsActivity used to look like before changing the color of the grid and adding an user icon:
+<img width="150" alt="image" src="https://user-images.githubusercontent.com/47352487/60191594-df161b00-9834-11e9-8093-9cd0aef2e157.png">
+
 I changed the standard image which comes with user recipes. The new icon matches the theme of the app much better. Depending on the kind of recipe, there's a method that makes sure to load the image url when it's an API recipe. 
+
 
 Also took care of landscape variation. 
 
