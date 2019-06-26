@@ -93,6 +93,18 @@ Also the upload button changed, I felt like it didn't match the rest of the page
 After letting a friend using the app I noticed she would click on the image in RecipeActivity. This made me think about an option to get a closer view on it. So I created a method when the user clicks on the image, a bigger version of it will become visible in the activity, along with a closing button. This way the user can have a better look at the recipes image.
 Also she uploaded her own recipe, and when she pressed the button to upload, I noticed the edittexts don't clear automatically. I added this to the method so now the app handles this itself and the user is able to eventually add more recipes.
 
+Oldest version:
+
+<img width="180" alt="image" src="https://user-images.githubusercontent.com/47352487/60158845-2dee9100-97f2-11e9-8c07-7b9b6264a029.png">
+
+After creating the logo:
+
+<img width="180" alt="image" src="https://user-images.githubusercontent.com/47352487/60158900-48286f00-97f2-11e9-9040-a0893bddde79.png">
+
+Updated version:
+
+<img width="180" alt="image" src="https://user-images.githubusercontent.com/47352487/60158538-97ba6b00-97f1-11e9-9bbf-062a51b013d5.png">
+
 Finally I cleaned my code again and added a few last comments to some new methods. 
 
 ### Day 15 woensdag
