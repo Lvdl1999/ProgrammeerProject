@@ -102,3 +102,5 @@ Today I worked on the process book. I made a lot of process and noted everything
 
 I changed the standard image which comes with user recipes. The new icon matches the theme of the app much better. Depending on the kind of recipe, there's a method that makes sure to load the image url when it's an API recipe. 
 
+Also took care of landscape variation. 
+
