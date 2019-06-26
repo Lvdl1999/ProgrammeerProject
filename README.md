@@ -6,6 +6,7 @@
 *What’s in your fridge?*
 
 YOURFRIDGE APP
+
 https://www.instagram.com/yourfridge_app/
 
 
@@ -20,9 +21,19 @@ Also note that these materials have their own respective licenses. You should at
 
 #### External sources
 
-code
-images
-other materials
+##### Code:
+
+
+##### Images:
+Upload icon: https://media.istockphoto.com/vectors/people-user-with-dining-symbol-vector-icon-vector-id991052036
+
+Logo food: https://caspiannews.com/news-detail/baku-hosts-street-food-festival-2018-6-12-57/
+
+User icon: https://www.shutterstock.com/nl/image-vector/upload-icon-vector-clip-art-useful-485413261?studio=1
+
+Instagram logo: https://www.google.com/search?q=instagram+logo&client=safari&rls=en&tbm=isch&source=iu&ictx=1&fir=2-xl4xXU3nt0oM%253A%252COx5HMhQjUE05QM%252C_&vet=1&usg=AI4_-kQePbD0DlsIm5B_9IggFVo1gE36hw&sa=X&ved=2ahUKEwiOwbiu54TjAhUDb1AKHQdTAN8Q9QEwAXoECAUQBg#imgrc=2-xl4xXU3nt0oM:&vet=1
+
+##### Other materials:
 
 
 #### Copyright Statement
