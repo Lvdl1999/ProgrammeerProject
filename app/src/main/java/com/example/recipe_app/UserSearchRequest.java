@@ -1,6 +1,6 @@
 /**
- *
- *
+ * UserSearchRequest
+ * This class handles the SearchRequest which filters the database on the users given searchword
  * Created by Levy van der Linde (june 2019)
  * Minor Programmeren
  */
@@ -23,7 +23,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class UsersRecipeRequest implements Response.Listener<JSONArray>, Response.ErrorListener {
+public class UserSearchRequest implements Response.Listener<JSONArray>, Response.ErrorListener {
 
     private Context context;
     private Callback callback;
@@ -36,7 +36,7 @@ public class UsersRecipeRequest implements Response.Listener<JSONArray>, Respons
     }
 
     // Constructor for UserGetRequest that accepts a Context type parameter
-    UsersRecipeRequest(Context context){
+    UserSearchRequest(Context context){
         this.context = context;
     }
     public void getUsersRecipe(Callback callback, String id){

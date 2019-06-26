@@ -14,12 +14,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ResultsActivity extends AppCompatActivity implements APISearchRequest.Callback, UsersRecipeRequest.Callback  {
+public class ResultsActivity extends AppCompatActivity implements APISearchRequest.Callback, UserSearchRequest.Callback  {
     private ArrayList recipe;
     private ArrayList GetRecipe;
     private String search_word;
@@ -40,8 +39,8 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
         // The 'previous' button will be invisible in case the app is at page 0
         page = (int) intent.getIntExtra("page", 0);
         if(page == 0) {
-            // Performing an UsersRecipeRequest only on page 0
-            UsersRecipeRequest userRecipeRequest = new UsersRecipeRequest(this);
+            // Performing an UserSearchRequest only on page 0
+            UserSearchRequest userRecipeRequest = new UserSearchRequest(this);
             userRecipeRequest.getUsersRecipe(this, search_word);
             Button previous = (Button) findViewById(R.id.button3);
             previous.setVisibility(View.GONE);
