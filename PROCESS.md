@@ -82,7 +82,7 @@ Also based on some feedback I received, the app will show a toastmessage in case
 It's not possible to do a filtered searchRequest for user recipes based on the users searchword. I asked the TA and she concluded it's not possible with the rester database i'm using. That is very unfortunate because it can't search for partly matching recipes. It would only work if the user would accidentally put the exact same content as what's in the users recipe.
 
 
-### Day 14 dinsdag
+### Day 14 
 I added a floating action button in ResultsActivity so the user can also upload their own from there. Also the overall font style changed to one I downloaded called 'actor'. Also the background of the grid changed to a little lighter shade of grey than the apps background. This way there is a bit more contrast to the recipes which I find better looking. 
 
 About the SearchActivity, which is now the main screen. I changed quite a lot about the UI like the colors and logo. The colors are fiercer and stand out more (in my opinion). Because this is the mainscreen now, I felt like it should pop out once you open the app. 
@@ -97,7 +97,7 @@ Also she uploaded her own recipe, and when she pressed the button to upload, I n
 
 Finally I cleaned my code again and added a few last comments to some new methods. 
 
-### Day 15 woensdag
+### Day 15 
 Today I worked on the process book. I made a lot of process and noted everything but didn't have time to actually write about it. 
 
 I changed the standard image which comes with user recipes. The new icon matches the theme of the app much better. Depending on the kind of recipe, there's a method that makes sure to load the image url when it's an API recipe. 
