@@ -69,14 +69,34 @@ At first I had a really good start. Then I realized I had to make something to m
 Also have worked on the next and previous button in the ResultsActivity but not done yet. 
 Update: thursday night. Both requests work and data is received by RecipeActivity. Difficulty was the difference in format from the user recipes and api recipes. Almost done only the ingredients have to me passed correctly to the RecipeActivity.
 I've reached my maximum of API calls, which is a total of 50. So tomorrow i'm gonna work on the next and previous button, invisibility at some point for some buttons, filtering user recipes with searchrequest.
+The API recipes get a source url which redirects them to the online page with the total recipe. I created a button to redirect the user and this button will be available when a user has clicked on a user recipe. This is because there is no source url included with those.
 
 ### Day 13
-
-previous en next doen het
-Beide soorten recepten kan ej op klikken en krijg je bijbehorend recept
-Nog niet filteren op userdatabase 
-
-View recipe online knop is onzichtbaar bij user recipe
-Daarvoor in de plaats krijg je bij user recipe juist het recept gewoon al te zien in textview
-
 I decided to get rid of the MainActivity because it's only useful to have a startscreen with options on a game app. On my app it's most important to use the search option and next to that the option to upload your own recipes. So the mainactivity is not as usefull and can be deleted. Instead of the mainscreen, the searchactivity will be the first screen and the user will directly be able to search or upload their own recipe. 
+
+The next en previous buttons in the ResultsActivity both work. Also the previous button only shows up after the user gets on page 1 so it can go back to page 0. On page 0 there is no previous button needed.
+Also I created a recipetag to distinguish API recipes from user recipes. The API recipes have a "isAPI' tag which is true and recipes false. Depending on what the user clicks on, the app knows which request has to be performed.
+
+Also based on some feedback I received, the app will show a toastmessage in case it didn't find any matches with the users searchword. This is important because someone could be searching with some very special species of fruit and the app wouldn't find anything.
+
+It's not possible to do a filtered searchRequest for user recipes based on the users searchword. I asked the TA and she concluded it's not possible with the rester database i'm using. That is very unfortunate because it can't search for partly matching recipes. It would only work if the user would accidentally put the exact same content as what's in the users recipe.
+
+
+### Day 14 dinsdag
+I added a floating action button in ResultsActivity so the user can also upload their own from there. Also the overall font style changed to one I downloaded called 'actor'. Also the background of the grid changed to a little lighter shade of grey than the apps background. This way there is a bit more contrast to the recipes which I find better looking. 
+
+About the SearchActivity, which is now the main screen. I changed quite a lot about the UI like the colors and logo. The colors are fiercer and stand out more (in my opinion). Because this is the mainscreen now, I felt like it should pop out once you open the app. 
+
+Next to this I had this idea about wanting to involve social media with my app. So I did, and I created an instragram page for my project. On the SearchActivity there is an Instagram button which will redirect the user to my instagram page called 'yourfridge_app' :)
+
+Also the upload button changed, I felt like it didn't match the rest of the page anymore so it became an icon too. 
+After letting a friend using the app I noticed she would click on the image in RecipeActivity. This made me think about an option to get a closer view on it. So I created a method when the user clicks on the image, a bigger version of it will become visible in the activity, along with a closing button. This way the user can have a better look at the recipes image.
+Also she uploaded her own recipe, and when she pressed the button to upload, I noticed the edittexts don't clear automatically. I added this to the method so now the app handles this itself and the user is able to eventually add more recipes.
+
+Finally I cleaned my code again and added a few last comments to some new methods. 
+
+### Day 15 woensdag
+Today I worked on the process book. I made a lot of process and noted everything but didn't have time to actually write about it. 
+
+I changed the standard image which comes with user recipes. The new icon matches the theme of the app much better. Depending on the kind of recipe, there's a method that makes sure to load the image url when it's an API recipe. 
+
