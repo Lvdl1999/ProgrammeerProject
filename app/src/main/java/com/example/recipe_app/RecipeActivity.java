@@ -47,7 +47,6 @@ public class RecipeActivity extends AppCompatActivity implements APIGetRequest.C
             // Performing a UsersGetRequest
             UserGetRequest userGetRequest = new UserGetRequest(this);
             userGetRequest.getUsersRecipe(this, recipe_id);
-            System.out.println("geklikt op: " + recipe_id);
 
             // If it's an user recipe there is no browse button needed to redirect to online recipe
             // so in this case the button won't show

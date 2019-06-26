@@ -37,10 +37,7 @@ public class UserGetRequest implements Response.Listener<JSONObject>, Response.E
     }
     public void getUsersRecipe(UserGetRequest.Callback callback, String id){
         this.callback = callback;
-        //TODO id fixen
-        System.out.println("zoek id: " + id);
         String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe/"+id;
-        //String url = "https://ide50-lvanderlinde.legacy.cs50.io:8080/searchRecipe?id="+ id;
 
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this, this);

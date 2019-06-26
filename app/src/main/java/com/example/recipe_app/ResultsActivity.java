@@ -54,9 +54,7 @@ public class ResultsActivity extends AppCompatActivity implements APISearchReque
                 // Get the GridView selected/clicked item text
                 SearchRecipe clickedrecipe = (SearchRecipe) recipe.get(position);
                 String recipeId = clickedrecipe.getId();
-//                TODO user recipes filteren op id ipv naam eigenlijk
-//                String username = clickedrecipe.getName();
-//                System.out.println("username:" + username);
+//
                 Boolean tag = clickedrecipe.getRecipetag();
 
                 // The recipe id and tag is put within the intent to RecipeActivity for the API getRequest
