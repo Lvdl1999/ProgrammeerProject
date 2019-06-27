@@ -22,6 +22,7 @@ users can enjoy your recipes.
 The app consists of 4 screens in total: SearchActivity, ResultsActivity, RecipeActivity and an UploadActivity.
 
 **High level overview**
+
 Starting off with the SearchActivity. From here the user can start searching recipes. Once the searchword is 
 given and the users clicks 'search', the app will show an overview of recipes in the ResultsActivity. 
 From this overview it's possible to get more details about a recipe by clicking on it. The details of the recipe like:
@@ -32,6 +33,7 @@ with a searchword that matches an ingredients from the user recipe, it will show
 Finally the other option from SearchActivity is the Instagram button. This will redirect you to the Instagram Page of the YourFridge app :)
 
 **Details about my code**
+
 Next to the screens, there is a lot behind the scenes. 
 This app uses an API called ['Food2Fork'](https://www.food2fork.com) and also a local host called ['the Rester Database'](https://github.com/stgm/rester).
 
