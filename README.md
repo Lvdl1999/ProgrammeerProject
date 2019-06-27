@@ -5,16 +5,16 @@
 
 *What’s in your fridge?*
 No inspiration on what to cook? This app recommends several recipes built on what’s in your fridge!
+
 [YOURFRIDGE APP](https://www.instagram.com/yourfridge_app/)
+
+### You can find the [**Product Demo**](https://github.com/Lvdl1999/ProgrammeerProject/blob/master/Product%20Demo%20YourFridge%20smaller.mp4) of the YourFridge app over here
 
 #### *Opening screen*
 From this screen its possible to go to 'upload a recipe' (right).
 But also to view this apps Instagram page (left).
 
 <img width="1200" alt="image" src="https://user-images.githubusercontent.com/47352487/60188495-ade71c00-982f-11e9-92d8-6b55aed59b9d.png">
-
-
-![ezgif com-video-to-apng-2](https://user-images.githubusercontent.com/47352487/60277868-b35f6780-98fe-11e9-8de2-4b99c853459c.png)
 
 #### *Search option with following results*
 Searching with 'chicken' gives the following results
