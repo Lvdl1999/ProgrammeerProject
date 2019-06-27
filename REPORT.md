@@ -15,7 +15,7 @@ based on a single or few searchwords. It's for those days were you don't have an
 should eat (or even drink). With my app it's also possible to add your own recipes to the database so other 
 users can enjoy your recipes.
 
-![image](https://user-images.githubusercontent.com/47352487/60256538-0a9b1300-98d2-11e9-8a3b-4eb37e5f619e.png)
+<img width="200" alt="image" src="https://user-images.githubusercontent.com/47352487/60271941-83f72d80-98f3-11e9-9dbe-d3a014eda798.png">
 
 ### Technical design
 
@@ -48,14 +48,7 @@ To actually put the data in the GridView in ResultsActivity, the app uses the Re
 and image and has a default image of the user icon. So the app only puts an image_url incase it's received from an API recipe.
 
 _Locally filtering searchword_
-
--
--
--
---
-
-
-
+Unafortunately it wasn't able to filter online in the rester database on the users searchword. I solved it by locally filtering the ingredients in my code instead of online throught the database url.
 
 _Recipe tag_
 
@@ -99,9 +92,10 @@ My first design and sketch was this:
 One month later, after a lot of hard work this is the total change:
 <img width="1000" alt="image" src="https://user-images.githubusercontent.com/47352487/60266856-37a6f000-98e9-11e9-952e-b728d8a2effa.png">
 
-**Important challenges and development during week 1**
-Week 1:
 
+**Week 1:**
+
+_Changing proposal_
 First of all I started this project with a different proposal. I had this app idea but couldn't find a fitting API for it. After that I started brainstorming and came up with the idea about 'what's in your fridge?'.
 My first idea was having two searchbars in SearchActivity because I wans't sure if it would succeed to put both SearchRequests results at once in ResultsActivity. Then I consulted with a TA and thought it out to make it happen.
 
@@ -109,17 +103,19 @@ _Loading recipes images_
 When my API worked I realised it did load the recipes titles in the ResultsActivity but not the recipes images. I couldn't understand how because the titles did come through.
 After trying a lot with Natasja I found out it was because of the url itself. The url was an 'http'- instead of 'https' link which is why it didn't work. I created a method which splits the url at the ':' and puts an 's' inbetween. 
 
-Week 2:
+**Week 2:**
 
+_Working with API_
 Working on both API requests went really well, I had a really good idea about how I wanted to use and implement it. In case I forgot something about the standards of a Request I used my older projects from AndroidStudio.
 After both the SearchRequest and GetRequest for the API worked I started with the users recipes. I decided to go with the Rester Database because I have already used it once before. 
 
 _Two search options to one_
 At first I wanted to make two search options. One to search for users recipes and one for the API recipes. This wouldn't be a nice solution and certainly not very user friendly because it would require a user two search twice but seperately. After the data is received from both the APISearchRequest and the UserSearchRequest it's put together in one list which is shown in through the ResultsAdapter. I decided to make sure the user recipes always show first in the ResultsActivity because the API has an endless amount of recipes and that would outshine the user recipes if they came after. 
 
-Week 3:
+**Week 3:**
 
-I had to make something to make sure the RecipeActivity could recognize whether the user clicked on an user recipe or API recipe. I started off quite enthousiasmic but then I messed up and didn't get the code back as it was. So I had to go back to my last commit, which was were I left off the day before. I created the Recipe tag so it knows to do the right request.
+_Recipe tags risks_
+I had to make something to make sure the RecipeActivity could recognize whether the user clicked on an user recipe or API recipe. I started off quite enthousiasmic but then I messed up and didn't get the code back as it was. So I had to go back to my last commit, which was were I left off the day before. But eventually I created the Recipe tag so the app knows to do the right request.
 
 _Difference recipes_ 
 During this week I realized the difficulty about the difference between working with the API recipes and userrecipes. 
@@ -136,7 +132,7 @@ Also thought about what would happen if the app can't find any matching recipes 
 _Filter in rester database_
 After asking the TA and trying a few things we realized it's not possible to filter the database with the searchword. This was quite unfortunate because it was the last thing I needed to complete the implementation of my app. I solved it by locally filtering the ingredients in my code instead of online throught the database url.
 
-Week 4:
+**Week 4:**
 
 _User Interface_
 This last week I focussed a lot at improving the UI. That's why I made a few changes and improvements:
