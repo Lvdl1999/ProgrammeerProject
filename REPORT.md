@@ -75,6 +75,7 @@ on the UploadActivity. The user puts all data in edit texts so the recipe will b
 button is invisible at an users recipe detailpage.
 
 _Upload your own recipe!_
+
 Whether the user clicks on the upload icon in the SearchActivity or ResultsActivity, the app will redirect to the UploadActivity.
 In the UploadActivity there are a few edittexts which will represent your recipe. The user has to fill in their name, emailadress,
 the title of their recipe, it's ingredients and ofcourse the recipe itself. When clicking on the button 'Upload recipe', it'll check if 
@@ -85,6 +86,7 @@ To upload the recipe to the resterdatabase all parameters are put in a new reque
 text fields will return blank so the user could add more recipes if that's wanted.
 
 _Find your own!_
+
 After your recipe was uploaded to the rester database, it's now possible to find your own recipe on the app!
 Use an ingredient from your own recipe to find it :)
 
@@ -97,6 +99,8 @@ Use an ingredient from your own recipe to find it :)
 
 
 Samenvoegen van users en api recepten
+
+Users recepten als eerste boven aan altijd omdat api eindeloos veel recepten nog heeft dus zou je ze nooit tegenkomen
 
 
 
