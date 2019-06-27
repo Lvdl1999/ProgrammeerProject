@@ -126,8 +126,8 @@ I had to make something to make sure the RecipeActivity could recognize whether 
 
 _Difference recipes_ 
 
-During this week I realized the difficulty about the difference between working with the API recipes and userrecipes. 
-- Think about the API recipe giving the ingredients in an Arraylist but the user uploads their ingredients as a String.
+During this week I realized the difficulty about the difference between working with the API recipes and userrecipes: 
+- First of all the API recipe giving the ingredients in an Arraylist but the user uploads their ingredients as a String. 
 - API recipes come with an image_url and I didn't get at the option to add an image to your own recipe.
 - Also do the API recipes have a source_url which links to the recipe online but the user recipes have to get the recipe as a String. To solve this problem I used the variable 'source' to pass a users recipe as a String.
 
