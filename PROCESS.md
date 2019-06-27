@@ -129,3 +129,6 @@ She liked the fact that I have a lot of short functions in my code because it's 
 I also gave her some feedback. She had some comments which could have been a little bit more extensive to a reader like me.
 Her code was very decent, further she only had to delete a few souts for testing the code. 
 
+### Day 16
+Yesterday the code had to be submitted. Today I worked on my final report and created the demonstration video.
+Also worked on the YourFridge instagram page ;)
