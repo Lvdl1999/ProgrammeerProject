@@ -98,28 +98,34 @@ One month later, after a lot of hard work this is the total change:
 **Week 1:**
 
 _Changing proposal_
+
 First of all I started this project with a different proposal. I had this app idea but couldn't find a fitting API for it. After that I started brainstorming and came up with the idea about 'what's in your fridge?'.
 My first idea was having two searchbars in SearchActivity because I wans't sure if it would succeed to put both SearchRequests results at once in ResultsActivity. Then I consulted with a TA and thought it out to make it happen.
 
 _Loading recipes images_
+
 When my API worked I realised it did load the recipes titles in the ResultsActivity but not the recipes images. I couldn't understand how because the titles did come through.
 After trying a lot with Natasja I found out it was because of the url itself. The url was an 'http'- instead of 'https' link which is why it didn't work. I created a method which splits the url at the ':' and puts an 's' inbetween. 
 
 **Week 2:**
 
 _Working with API_
+
 Working on both API requests went really well, I had a really good idea about how I wanted to use and implement it. In case I forgot something about the standards of a Request I used my older projects from AndroidStudio.
 After both the SearchRequest and GetRequest for the API worked I started with the users recipes. I decided to go with the Rester Database because I have already used it once before. 
 
 _Two search options to one_
+
 At first I wanted to make two search options. One to search for users recipes and one for the API recipes. This wouldn't be a nice solution and certainly not very user friendly because it would require a user two search twice but seperately. After the data is received from both the APISearchRequest and the UserSearchRequest it's put together in one list which is shown in through the ResultsAdapter. I decided to make sure the user recipes always show first in the ResultsActivity because the API has an endless amount of recipes and that would outshine the user recipes if they came after. 
 
 **Week 3:**
 
 _Recipe tags risks_
+
 I had to make something to make sure the RecipeActivity could recognize whether the user clicked on an user recipe or API recipe. I started off quite enthousiasmic but then I messed up and didn't get the code back as it was. So I had to go back to my last commit, which was were I left off the day before. But eventually I created the Recipe tag so the app knows to do the right request.
 
 _Difference recipes_ 
+
 During this week I realized the difficulty about the difference between working with the API recipes and userrecipes. 
 - Think about the API recipe giving the ingredients in an Arraylist but the user uploads their ingredients as a String.
 - API recipes come with an image_url and I didn't get at the option to add an image to your own recipe.
@@ -128,15 +134,18 @@ During this week I realized the difficulty about the difference between working 
 Most of there topics are also because I decided to use 1 modelclass per request for API and user recipes as well. I did this after some consultation because it's supposed to be more decent for the code, but it might be a bit subjective. 
 
 _User interface_
+
 About the user interface, I decided to get rid of the MainActivity. I decided this after I got some feedback about the fact that only games have a start menu as opening screen. On this app it's most important to use the search option so that's what the user gets at first.
 Also thought about what would happen if the app can't find any matching recipes with your searchword. I created a toastmessage to inform the user for this case. 
 
 _Filter in rester database_
+
 After asking the TA and trying a few things we realized it's not possible to filter the database with the searchword. This was quite unfortunate because it was the last thing I needed to complete the implementation of my app. I solved it by locally filtering the ingredients in my code instead of online throught the database url.
 
 **Week 4:**
 
 _User Interface_
+
 This last week I focussed a lot at improving the UI. That's why I made a few changes and improvements:
 - Added a floating button in ResultsActivity so the user go to the UploadActivity from there too.
 - Changed to overall font style to one I downloaded called 'actor'
@@ -147,6 +156,7 @@ This last week I focussed a lot at improving the UI. That's why I made a few cha
 - Changed the standard image from user recipes to an icon. Depending on the kind of recipe, there's a method that makes sure to load the image url when it's an API recipe. 
 
 _Noticed while testing_
+
 After having a friend testing my app I noticed she would click on the image in RecipeActivity. This made me think about an option to get a closer view on it. So I created a method when the user clicks on the image, a bigger version of it will become visible in the activity, along with a closing button. This way the user can have a better look at the recipes image.
 Also she uploaded her own recipe, and when she pressed the button to upload, I noticed the edittexts don't clear automatically. I added this to the method so now the app handles this itself and the user is able to eventually add more recipes.
 
