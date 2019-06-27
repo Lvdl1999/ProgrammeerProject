@@ -4,7 +4,7 @@
 ### Minor Programmeren
 
 *What’s in your fridge?*
-
+No inspiration on what to cook? This app recommends several recipes built on what’s in your fridge!
 [YOURFRIDGE APP](https://www.instagram.com/yourfridge_app/)
 
 
